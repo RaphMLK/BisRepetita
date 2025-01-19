@@ -1,4 +1,5 @@
 import 'package:bisrepetita/components/bp-page.dart';
+import 'package:bisrepetita/pages/rules.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -45,7 +46,12 @@ class HomePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 25),
                     FilledButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RulePage()));
+                      },
                       style: FilledButton.styleFrom(
                           minimumSize: Size.fromHeight(40),
                           backgroundColor: Color(0xFF816E94)),
