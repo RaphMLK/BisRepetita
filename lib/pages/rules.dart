@@ -14,9 +14,10 @@ class RulePage extends StatelessWidget {
           padding: const EdgeInsets.all(32),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            spacing: 50,
+            spacing: 40,
             children: [
               Row(
+                spacing: 10,
                 children: [
                   Expanded(
                       child: Icon(color: Colors.white, size: 80, Icons.face)),
@@ -32,6 +33,7 @@ class RulePage extends StatelessWidget {
                 ],
               ),
               Row(
+                spacing: 10,
                 children: [
                   Expanded(
                       flex: 3,
@@ -47,6 +49,7 @@ class RulePage extends StatelessWidget {
                 ],
               ),
               Row(
+                spacing: 10,
                 children: [
                   Expanded(
                       child: Icon(
@@ -61,7 +64,26 @@ class RulePage extends StatelessWidget {
                               fontSize: 14,
                               fontWeight: FontWeight.w300,
                               color: Colors.white),
-                          'Dès que chaque joueur·euse aura donné sa réponse, votre chef·fe révélera sa réponse.\nSi une personne a la même réponse que votre chef·fe, alors iel est éliminé·e.\nEffectuez autant de rounds nécessaires pour trouver votre gagnant·e (la dernière personne en vie).'))
+                          'Dès que chaque joueur·euse aura donné sa réponse, votre chef·fe révélera sa réponse.\nSi une personne a la même réponse que votre chef·fe, alors iel est éliminé·e.'))
+                ],
+              ),
+              Row(
+                spacing: 10,
+                children: [
+                  Expanded(
+                      flex: 3,
+                      child: Text(
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.poppins(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.white),
+                          'Effectuez autant de rounds nécessaires pour trouver votre gagnant·e (la dernière personne en vie).')),
+                  Expanded(
+                      child: Icon(
+                          color: Colors.white,
+                          size: 80,
+                          Icons.sentiment_very_satisfied)),
                 ],
               ),
             ],
