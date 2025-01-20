@@ -1,0 +1,27 @@
+{
+  "cat1": [
+    "Citez-moi une ville des Hauts de France",
+    "Citez-moi un canton suisse",
+    "Citez-moi un fruit"
+  ],
+  "cat2": [
+    "Citez-moi un chiffre",
+    "Citez-moi un des épisodes d'Harry Potter",
+    "Citez-moi une des planètes du Système Solaire"
+  ],
+  "cat3": [
+    "Citez-moi un jour de la semaine",
+    "Citez-moi un doigt",
+    "Citez-moi un club portugais ayant gagné le championnat national de football"
+  ],
+  "cat4": [
+    "Citez-moi un des 4 Fantastiques",
+    "Citez-moi un océan",
+    "Citez-moi une lettre qui permet de décrire un groupe sanguin"
+  ],
+  "cat5": [
+    "Préfèrez-vous Messi ou CR7 ?",
+    "Préfèrez-vous les livres ou les films ?",
+    "Préfèrez-vous l’hiver ou l’été ?"
+  ]
+}

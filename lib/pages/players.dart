@@ -2,6 +2,7 @@ import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/components/players/bp-players-add-list.dart';
 import 'package:bisrepetita/models/players-list.dart';
+import 'package:bisrepetita/pages/question.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,9 +27,16 @@ class _PlayersPageState extends State<PlayersPage> {
                 flex: 1,
                 child: Center(child:
                     Consumer<PlayersList>(builder: (context, players, child) {
-                  print(players.players);
                   return FilledButton(
-                      onPressed: players.players.length >= 2 ? () {} : null,
+                      onPressed: players.players.length >= 2
+                          ? () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const QuestionPage()));
+                            }
+                          : null,
                       style: FilledButton.styleFrom(
                         minimumSize: Size.fromHeight(40),
                         backgroundColor: Color(0xFF816E94),
