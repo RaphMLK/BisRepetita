@@ -14,4 +14,8 @@ class PlayersList extends ChangeNotifier {
     _players.add(player);
     notifyListeners();
   }
+
+  List<Player> getAlivePlayers() {
+    return this._players.where((player) => player.inLife).toList();
+  }
 }
