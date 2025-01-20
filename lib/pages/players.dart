@@ -1,9 +1,6 @@
-import 'dart:ui';
-
 import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/models/player.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,18 +29,13 @@ class BPPlayersList extends StatefulWidget {
 
 class _BPPlayersListState extends State<BPPlayersList> {
   List<Player> _players = [Player('Rafa'), Player('Selma'), Player('Victoire')];
+  bool _addPlayerInput = false;
+  late TextEditingController _addPlayerController;
 
-  Widget _proxyDecorator(Widget child, int index, Animation<double> animation) {
-    return AnimatedBuilder(
-      animation: animation,
-      builder: (BuildContext context, Widget? child) {
-        return Material(
-          color: Colors.transparent,
-          child: child,
-        );
-      },
-      child: child,
-    );
+  @override
+  void initState() {
+    super.initState();
+    _addPlayerController = TextEditingController();
   }
 
   @override
@@ -95,38 +87,107 @@ class _BPPlayersListState extends State<BPPlayersList> {
                 ),
               ),
             ),
-          DecoratedBox(
-            key: Key('ajouter'),
-            position: DecorationPosition.foreground,
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: Divider.createBorderSide(context, color: Colors.white),
-              ),
-            ),
-            child: ListTile(
-              key: Key('ajouter'),
-              tileColor: Colors.transparent,
-              title: Text(
-                  style: GoogleFonts.poppins(
-                      fontSize: 26,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w300),
-                  'Ajouter'),
-              contentPadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-              leading: IconButton(
-                  onPressed: () {},
-                  iconSize: 24,
-                  padding: EdgeInsets.zero,
-                  constraints: BoxConstraints(),
-                  style: const ButtonStyle(
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          _addPlayerInput
+              ? DecoratedBox(
+                  key: Key('ajouter'),
+                  position: DecorationPosition.foreground,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: Divider.createBorderSide(context,
+                          color: Colors.white),
+                    ),
                   ),
-                  icon: const Icon(color: Colors.white, Icons.add)),
-              onTap: () {
-                print('je souhaite ajouter');
-              },
-            ),
-          )
+                  child: ListTile(
+                    key: Key('ajouter'),
+                    tileColor: Colors.transparent,
+                    title: TextField(
+                      controller: _addPlayerController,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.zero,
+                          isDense: true,
+                          counterText: '', // to hide the counter of length
+                          suffix: Transform(
+                            transform: Matrix4.translationValues(0, 3.5, 0),
+                            child: Container(
+                              height: 24,
+                              decoration: const ShapeDecoration(
+                                shape: CircleBorder(),
+                                color: Colors.white,
+                              ),
+                              child: IconButton(
+                                  onPressed: () {
+                                    _addAndValidatePlayer();
+                                  },
+                                  iconSize: 24,
+                                  padding: EdgeInsets.zero,
+                                  icon: const Icon(
+                                      color: Color(0xFF816E94), Icons.check)),
+                            ),
+                          )),
+                      cursorColor: Colors.white,
+                      autocorrect: false,
+                      autofocus: true,
+                      maxLength: 15,
+                      style: GoogleFonts.poppins(
+                        fontSize: 24,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      onTapOutside: (event) {
+                        _cancelPlayerInput();
+                      },
+                      onSubmitted: (event) {
+                        _addAndValidatePlayer();
+                      },
+                    ),
+                    contentPadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    leading: IconButton(
+                        onPressed: () {},
+                        iconSize: 24,
+                        padding: EdgeInsets.zero,
+                        constraints: BoxConstraints(),
+                        style: const ButtonStyle(
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        icon: const Icon(color: Colors.white, Icons.add)),
+                  ),
+                )
+              : DecoratedBox(
+                  key: Key('ajouter'),
+                  position: DecorationPosition.foreground,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: Divider.createBorderSide(context,
+                          color: Colors.white),
+                    ),
+                  ),
+                  child: ListTile(
+                    key: Key('ajouter'),
+                    tileColor: Colors.transparent,
+                    title: Text(
+                        style: GoogleFonts.poppins(
+                            fontSize: 26,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300),
+                        'Ajouter'),
+                    contentPadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    leading: IconButton(
+                        onPressed: () {},
+                        iconSize: 24,
+                        padding: EdgeInsets.zero,
+                        constraints: BoxConstraints(),
+                        style: const ButtonStyle(
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        icon: const Icon(color: Colors.white, Icons.add)),
+                    onTap: () {
+                      setState(() {
+                        _addPlayerInput = true;
+                      });
+                    },
+                  ),
+                )
         ],
         onReorder: (int oldIndex, int newIndex) {
           setState(() {
@@ -137,5 +198,33 @@ class _BPPlayersListState extends State<BPPlayersList> {
             _players.insert(newIndex, item);
           });
         });
+  }
+
+  void _addAndValidatePlayer() {
+    setState(() {
+      _players.add(new Player(_addPlayerController.text));
+      _addPlayerInput = false;
+    });
+    _addPlayerController.clear();
+  }
+
+  void _cancelPlayerInput() {
+    setState(() {
+      _addPlayerInput = false;
+    });
+    _addPlayerController.clear();
+  }
+
+  Widget _proxyDecorator(Widget child, int index, Animation<double> animation) {
+    return AnimatedBuilder(
+      animation: animation,
+      builder: (BuildContext context, Widget? child) {
+        return Material(
+          color: Colors.transparent,
+          child: child,
+        );
+      },
+      child: child,
+    );
   }
 }
