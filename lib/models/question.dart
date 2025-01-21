@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class Question extends ChangeNotifier {
   late Map<String, dynamic> questions;
   late String currentQuestion = "";
-  List<String> _questionsAlreadyAsked = [];
+  final List<String> _questionsAlreadyAsked = [];
 
   List<QuestionType> allQuestionType = [
     QuestionType.cat1,
@@ -37,9 +37,18 @@ class Question extends ChangeNotifier {
       String questionType = _randomQuestionType(nbPlayerAlive).toString();
       List<dynamic> questionFromType = questions[questionType.toString()];
       dynamic randomQuestion = (questionFromType..shuffle()).firstOrNull;
-      if (!_questionsAlreadyAsked.contains(randomQuestion.toString())) {
+      if (randomQuestion == null &&
+          !_isRemainingQuestions(_getAvailableQuestionType(nbPlayerAlive))) {
+        question = 'no more question';
+      } else if (randomQuestion != null &&
+          !_questionsAlreadyAsked.contains(randomQuestion.toString())) {
         question = randomQuestion.toString();
-      }
+        questionFromType.remove(randomQuestion);
+        questions[questionType.toString()] = questionFromType;
+      } /*else if (_questionsAlreadyAsked.toSet().containsAll(
+          _getAllQuestionFromTypes(_getAvailableQuestionType(nbPlayerAlive)))) {
+        question = 'no more question';
+      }*/
     }
     currentQuestion = question.toString();
     _questionsAlreadyAsked.add(currentQuestion);
@@ -48,11 +57,7 @@ class Question extends ChangeNotifier {
 
   QuestionType _randomQuestionType(int nbPlayers) {
     List<QuestionType> questionTypeAvailable =
-        allQuestionType.where((type) => type.enoughPlayer(nbPlayers)).toList();
-    if (questionTypeAvailable.length >= 4) {
-      questionTypeAvailable =
-          questionTypeAvailable.sublist(questionTypeAvailable.length - 3);
-    }
+        _getAvailableQuestionType(nbPlayers);
     if (questionTypeAvailable.length == 1) {
       return questionTypeAvailable[0];
     } else {
@@ -75,6 +80,25 @@ class Question extends ChangeNotifier {
       return (probabilityQuestionTypeList..shuffle())
           .first; // to get a random type
     }
+  }
+
+  List<QuestionType> _getAvailableQuestionType(int nbPlayers) {
+    List<QuestionType> questionTypeAvailable =
+        allQuestionType.where((type) => type.enoughPlayer(nbPlayers)).toList();
+    if (questionTypeAvailable.length >= 4) {
+      questionTypeAvailable =
+          questionTypeAvailable.sublist(questionTypeAvailable.length - 3);
+    }
+    return questionTypeAvailable;
+  }
+
+  bool _isRemainingQuestions(List<QuestionType> types) {
+    List<String> allQuestions = [];
+    for (final type in types) {
+      List<dynamic> questionInThisType = questions[type.toString()];
+      if (questionInThisType.isNotEmpty) return true;
+    }
+    return false;
   }
 }
 
