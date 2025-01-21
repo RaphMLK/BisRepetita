@@ -14,9 +14,12 @@ class QuestionPage extends StatefulWidget {
 
 class _QuestionPageState extends State<QuestionPage> {
   late TextEditingController _answerController;
-  FocusNode _focusNodeTextField = FocusNode();
-  bool validMasterAnswer = false;
+  final FocusNode _focusNodeTextField = FocusNode();
+  bool _validMasterAnswer = false;
+  bool _showAnswer = false;
   late Widget _widgetBelowQuestion;
+  String _buttonLabel = 'Valider';
+  late String _masterAnswer;
 
   @override
   void initState() {
@@ -46,36 +49,36 @@ class _QuestionPageState extends State<QuestionPage> {
             child: Column(
               children: [
                 Flexible(
-                    flex: 8,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Stack(children: [
-                          Consumer<Question>(
-                              builder: (context, question, child) {
-                            question.getNewQuestion(context);
-                            return Text(
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 30,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w200,
-                                ),
-                                question.currentQuestion);
-                          }),
-                        ]),
-                        SizedBox(height: 5),
-                        AnimatedSwitcher(
-                          duration: Duration(milliseconds: 200),
-                          transitionBuilder:
-                              (Widget child, Animation<double> animation) {
-                            return ScaleTransition(
-                                scale: animation, child: child);
-                          },
-                          child: _widgetBelowQuestion,
-                        )
-                      ],
+                    flex: 4,
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Consumer<Question>(
+                          builder: (context, question, child) {
+                        question.getNewQuestion(context);
+                        return Text(
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
+                              fontSize: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w200,
+                            ),
+                            question.currentQuestion);
+                      }),
                     )),
+                Flexible(
+                    flex: 4,
+                    child: Column(children: [
+                      SizedBox(height: 10),
+                      AnimatedSwitcher(
+                        duration: Duration(milliseconds: 200),
+                        transitionBuilder:
+                            (Widget child, Animation<double> animation) {
+                          return ScaleTransition(
+                              scale: animation, child: child);
+                        },
+                        child: _widgetBelowQuestion,
+                      )
+                    ])),
                 Flexible(
                     flex: 1,
                     child: Center(
@@ -98,16 +101,22 @@ class _QuestionPageState extends State<QuestionPage> {
                                         ? Colors.white
                                         : Color(0xFF7B2D26).withOpacity(0.6)),
                                 _answerController.text != ""
-                                    ? 'Valider'
+                                    ? _buttonLabel
                                     : 'Indiquez votre réponse'))))
               ],
             )));
   }
 
   validStep() {
-    if (!validMasterAnswer) {
-      validMasterAnswer = true;
+    if (!_validMasterAnswer) {
+      _validMasterAnswer = true;
+      _masterAnswer = _answerController.text;
       _widgetBelowQuestion = SizedBox(height: 60);
+      _buttonLabel = 'Révéler la réponse';
+    } else if (!_showAnswer) {
+      _showAnswer = true;
+      _buttonLabel = 'Voir les joueurs';
+      _widgetBelowQuestion = answerMasterWidget();
     }
   }
 
@@ -157,5 +166,17 @@ class _QuestionPageState extends State<QuestionPage> {
         onSubmitted: (event) {
           FocusScope.of(context).unfocus();
         });
+  }
+
+  Widget answerMasterWidget() {
+    return Card(
+        child: ListTile(
+      title: Text(
+          style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w300),
+          'Réponse :'),
+      subtitle: Text(
+          style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300),
+          _masterAnswer),
+    ));
   }
 }
