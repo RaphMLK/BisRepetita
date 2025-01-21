@@ -43,7 +43,8 @@ class _QuestionPageState extends State<QuestionPage> {
   @override
   Widget build(BuildContext context) {
     return BPPage(
-        appBar: BPAppBar(backButton: true, title: 'Question'),
+        appBar:
+            BPAppBar(backButton: false, title: 'Question', closeButton: true),
         child: Padding(
             padding: EdgeInsets.fromLTRB(32, 0, 32, 16),
             child: Column(

@@ -101,6 +101,13 @@ class Question extends ChangeNotifier {
     }
     return false;
   }
+
+  void restart() {
+    questions = <String, dynamic>{};
+    currentQuestion = "";
+    _questionsAlreadyAsked.clear();
+    notifyListeners();
+  }
 }
 
 enum QuestionType implements Comparable<QuestionType> {

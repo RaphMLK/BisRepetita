@@ -18,4 +18,9 @@ class PlayersList extends ChangeNotifier {
   List<Player> getAlivePlayers() {
     return this._players.where((player) => player.inLife).toList();
   }
+
+  void restart() {
+    _players.clear();
+    notifyListeners();
+  }
 }
