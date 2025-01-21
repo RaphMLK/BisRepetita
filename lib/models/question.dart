@@ -22,6 +22,8 @@ class Question extends ChangeNotifier {
   }
 
   void getNewQuestion(BuildContext context) async {
+    if (currentQuestion != "") return;
+
     if (questions.isEmpty) {
       // load questions from json files
       String data = await DefaultAssetBundle.of(context)
@@ -93,7 +95,6 @@ class Question extends ChangeNotifier {
   }
 
   bool _isRemainingQuestions(List<QuestionType> types) {
-    List<String> allQuestions = [];
     for (final type in types) {
       List<dynamic> questionInThisType = questions[type.toString()];
       if (questionInThisType.isNotEmpty) return true;
