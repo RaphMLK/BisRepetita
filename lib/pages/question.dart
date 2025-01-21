@@ -16,11 +16,13 @@ class _QuestionPageState extends State<QuestionPage> {
   late TextEditingController _answerController;
   FocusNode _focusNodeTextField = FocusNode();
   bool validMasterAnswer = false;
+  late Widget _widgetBelowQuestion;
 
   @override
   void initState() {
     super.initState();
     _answerController = TextEditingController();
+    _widgetBelowQuestion = textFieldForMaster();
     _focusNodeTextField.addListener(_onFocusChange);
   }
 
@@ -48,76 +50,43 @@ class _QuestionPageState extends State<QuestionPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Consumer<Question>(builder: (context, question, child) {
-                          question.getNewQuestion(context);
-                          return Text(
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.poppins(
-                                fontSize: 30,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w200,
-                              ),
-                              question.currentQuestion);
-                        }),
+                        Stack(children: [
+                          Consumer<Question>(
+                              builder: (context, question, child) {
+                            question.getNewQuestion(context);
+                            return Text(
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(
+                                  fontSize: 30,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w200,
+                                ),
+                                question.currentQuestion);
+                          }),
+                        ]),
                         SizedBox(height: 5),
-                        TextField(
-                          focusNode: _focusNodeTextField,
-                          controller: _answerController,
-                          decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Colors.white, width: 1)),
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Colors.white, width: 1)),
-                              contentPadding: EdgeInsets.zero,
-                              counterText: '', // to hide the counter of length
-                              suffix: _focusNodeTextField.hasFocus
-                                  ? Transform(
-                                      transform:
-                                          Matrix4.translationValues(0, 3.5, 0),
-                                      child: Container(
-                                        height: 24,
-                                        decoration: const ShapeDecoration(
-                                          shape: CircleBorder(),
-                                          color: Colors.white,
-                                        ),
-                                        child: IconButton(
-                                            onPressed: () {
-                                              setState(() {
-                                                _answerController.clear();
-                                              });
-                                            },
-                                            iconSize: 24,
-                                            padding: EdgeInsets.zero,
-                                            icon: const Icon(
-                                                color: Color(0xFF7B2D26),
-                                                Icons.close)),
-                                      ),
-                                    )
-                                  : null),
-                          cursorColor: Colors.white,
-                          autocorrect: false,
-                          style: GoogleFonts.poppins(
-                            fontSize: 24,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w300,
-                          ),
-                          onTapOutside: (event) {
-                            FocusScope.of(context).unfocus();
+                        AnimatedSwitcher(
+                          duration: Duration(milliseconds: 200),
+                          transitionBuilder:
+                              (Widget child, Animation<double> animation) {
+                            return ScaleTransition(
+                                scale: animation, child: child);
                           },
-                          onSubmitted: (event) {
-                            FocusScope.of(context).unfocus();
-                          },
-                        ),
+                          child: _widgetBelowQuestion,
+                        )
                       ],
                     )),
                 Flexible(
                     flex: 1,
                     child: Center(
                         child: FilledButton(
-                            onPressed:
-                                _answerController.text != "" ? () {} : null,
+                            onPressed: _answerController.text != ""
+                                ? () {
+                                    setState(() {
+                                      validStep();
+                                    });
+                                  }
+                                : null,
                             style: FilledButton.styleFrom(
                               minimumSize: Size.fromHeight(40),
                               backgroundColor: Color(0xFF816E94),
@@ -131,12 +100,62 @@ class _QuestionPageState extends State<QuestionPage> {
                                 _answerController.text != ""
                                     ? 'Valider'
                                     : 'Indiquez votre réponse'))))
-                /*FilledButton(
-                onPressed: () {
-
-                },
-                child: Text('Regenérer'))*/
               ],
             )));
+  }
+
+  validStep() {
+    if (!validMasterAnswer) {
+      validMasterAnswer = true;
+      _widgetBelowQuestion = SizedBox(height: 60);
+    }
+  }
+
+  Widget textFieldForMaster() {
+    return TextField(
+        focusNode: _focusNodeTextField,
+        controller: _answerController,
+        decoration: InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white, width: 1)),
+            focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white, width: 1)),
+            contentPadding: EdgeInsets.zero,
+            counterText: '', // to hide the counter of length
+            suffix: _focusNodeTextField.hasFocus
+                ? Transform(
+                    transform: Matrix4.translationValues(0, 3.5, 0),
+                    child: Container(
+                      height: 24,
+                      decoration: const ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Colors.white,
+                      ),
+                      child: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              _answerController.clear();
+                            });
+                          },
+                          iconSize: 24,
+                          padding: EdgeInsets.zero,
+                          icon: const Icon(
+                              color: Color(0xFF7B2D26), Icons.close)),
+                    ),
+                  )
+                : null),
+        cursorColor: Colors.white,
+        autocorrect: false,
+        style: GoogleFonts.poppins(
+          fontSize: 24,
+          color: Colors.white,
+          fontWeight: FontWeight.w300,
+        ),
+        onTapOutside: (event) {
+          FocusScope.of(context).unfocus();
+        },
+        onSubmitted: (event) {
+          FocusScope.of(context).unfocus();
+        });
   }
 }
