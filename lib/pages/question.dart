@@ -1,6 +1,7 @@
 import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/models/question.dart';
+import 'package:bisrepetita/pages/elimination.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -118,6 +119,10 @@ class _QuestionPageState extends State<QuestionPage> {
       _showAnswer = true;
       _buttonLabel = 'Voir les joueurs';
       _widgetBelowQuestion = answerMasterWidget();
+    } else {
+      Provider.of<Question>(context, listen: false).nextQuestion();
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const EliminationPage()));
     }
   }
 

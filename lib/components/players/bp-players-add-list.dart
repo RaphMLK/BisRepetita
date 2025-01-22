@@ -189,7 +189,7 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                         color: Colors.white,
                         fontWeight: FontWeight.w300),
                     '${_players.players[index].name}'),
-                contentPadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                contentPadding: EdgeInsets.zero,
                 leading: ReorderableDragStartListener(
                     index: index,
                     child: const Icon(color: Colors.white, Icons.reorder)),

@@ -34,8 +34,8 @@ class Question extends ChangeNotifier {
     var playersWatcher = context.read<PlayersList>();
     int nbPlayerAlive = playersWatcher.getAlivePlayers().length;
 
-    String question = "undefined";
-    while (question == "undefined") {
+    String question = "";
+    while (question == "") {
       String questionType = _randomQuestionType(nbPlayerAlive).toString();
       List<dynamic> questionFromType = questions[questionType.toString()];
       dynamic randomQuestion = (questionFromType..shuffle()).firstOrNull;
@@ -102,6 +102,11 @@ class Question extends ChangeNotifier {
     return false;
   }
 
+  void nextQuestion() {
+    currentQuestion = "";
+    notifyListeners();
+  }
+
   void restart() {
     questions = <String, dynamic>{};
     currentQuestion = "";
@@ -111,10 +116,10 @@ class Question extends ChangeNotifier {
 }
 
 enum QuestionType implements Comparable<QuestionType> {
-  cat1(codeJson: "cat1", minPlayers: 11),
-  cat2(codeJson: "cat2", minPlayers: 10),
-  cat3(codeJson: "cat3", minPlayers: 7),
-  cat4(codeJson: "cat4", minPlayers: 4),
+  cat1(codeJson: "cat1", minPlayers: 10),
+  cat2(codeJson: "cat2", minPlayers: 8),
+  cat3(codeJson: "cat3", minPlayers: 5),
+  cat4(codeJson: "cat4", minPlayers: 3),
   cat5(codeJson: "cat5", minPlayers: 2);
 
   const QuestionType({required this.codeJson, required this.minPlayers});

@@ -19,6 +19,14 @@ class PlayersList extends ChangeNotifier {
     return this._players.where((player) => player.inLife).toList();
   }
 
+  void eliminatePlayer(Player player) {
+    player.inLife = false;
+    _players.forEach((p) {
+      if (p.name == player.name) p.inLife = false;
+    });
+    notifyListeners();
+  }
+
   void restart() {
     _players.clear();
     notifyListeners();
