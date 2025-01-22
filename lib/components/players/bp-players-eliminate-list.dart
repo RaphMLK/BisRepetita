@@ -42,9 +42,70 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                       color: Colors.white,
                     ),
                     child: IconButton(
-                        onPressed: () {
-                          players.eliminatePlayer(player);
-                        },
+                        onPressed: () => showDialog(
+                            context: context,
+                            builder: (BuildContext context) => Dialog(
+                                  child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 16, horizontal: 24),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                  style: GoogleFonts.poppins(
+                                                      fontSize: 24,
+                                                      fontWeight:
+                                                          FontWeight.w300),
+                                                  'Eliminer ${player.name} ?'),
+                                            ],
+                                          ),
+                                          SizedBox(height: 10),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  style: ButtonStyle(
+                                                      backgroundColor:
+                                                          WidgetStatePropertyAll(
+                                                              Color(
+                                                                  0xFF7B2D26))),
+                                                  child: Text(
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                              color:
+                                                                  Colors.white),
+                                                      'Non')),
+                                              SizedBox(width: 8),
+                                              TextButton(
+                                                  onPressed: () {
+                                                    players.eliminatePlayer(
+                                                        player);
+                                                    Navigator.pop(context);
+                                                  },
+                                                  style: ButtonStyle(
+                                                      backgroundColor:
+                                                          WidgetStatePropertyAll(
+                                                              Color(
+                                                                  0xFF816E94))),
+                                                  child: Text(
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                              color:
+                                                                  Colors.white),
+                                                      'Oui'))
+                                            ],
+                                          )
+                                        ],
+                                      )),
+                                )),
                         iconSize: 24,
                         padding: EdgeInsets.zero,
                         icon:
