@@ -1,4 +1,5 @@
 import 'package:bisrepetita/models/players-list.dart';
+import 'package:bisrepetita/pages/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -89,6 +90,15 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                                                     players.eliminatePlayer(
                                                         player);
                                                     Navigator.pop(context);
+                                                    if (players
+                                                        .getAlivePlayers()
+                                                        .isEmpty) {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  ResultPage()));
+                                                    }
                                                   },
                                                   style: ButtonStyle(
                                                       backgroundColor:
