@@ -1,8 +1,8 @@
+import 'package:bisrepetita/components/bp-language-select.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/pages/players.dart';
 import 'package:bisrepetita/pages/rules.dart';
 import 'package:bisrepetita/tools.dart';
-import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -73,8 +73,7 @@ class HomePage extends StatelessWidget {
                                   child: Text(getAppLocalizations(context)!
                                       .home_page_button_rules),
                                 ))),
-                        CountryFlag.fromCountryCode('FR',
-                            shape: const RoundedRectangle(12))
+                        BPLanguageSelect()
                       ],
                     )
                   ],
