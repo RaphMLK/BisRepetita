@@ -1,8 +1,10 @@
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/HomePage.dart';
+import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(
@@ -18,8 +20,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = getAppLocalizations(context);
+    final title = l10n?.title;
+
     return MaterialApp(
-      title: 'BisRepetita',
+      title: title,
+      locale: Locale('fr'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

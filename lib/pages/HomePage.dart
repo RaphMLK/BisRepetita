@@ -1,6 +1,8 @@
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/pages/players.dart';
 import 'package:bisrepetita/pages/rules.dart';
+import 'package:bisrepetita/tools.dart';
+import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,14 +20,15 @@ class HomePage extends StatelessWidget {
                   child: RichText(
                       textAlign: TextAlign.end,
                       text: TextSpan(
-                          text: 'BisRepetita.\n',
+                          text: getAppLocalizations(context)?.home_page_title,
                           style: GoogleFonts.poppins(
                               fontSize: 48,
                               height: 0.7,
                               fontWeight: FontWeight.w600),
                           children: [
                             TextSpan(
-                                text: 'Sois Original.',
+                                text: getAppLocalizations(context)
+                                    ?.home_page_subtitle,
                                 style: GoogleFonts.poppins(
                                     fontSize: 20,
                                     fontStyle: FontStyle.italic,
@@ -48,20 +51,31 @@ class HomePage extends StatelessWidget {
                       style: FilledButton.styleFrom(
                           minimumSize: Size.fromHeight(40),
                           backgroundColor: Color(0xFF816E94)),
-                      child: Text('Jouer'),
+                      child: Text(
+                          getAppLocalizations(context)!.home_page_button_play),
                     ),
                     const SizedBox(height: 25),
-                    FilledButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const RulePage()));
-                      },
-                      style: FilledButton.styleFrom(
-                          minimumSize: Size.fromHeight(40),
-                          backgroundColor: Color(0xFF816E94)),
-                      child: Text('Règles'),
+                    Row(
+                      children: [
+                        Expanded(
+                            child: Padding(
+                                padding: EdgeInsets.fromLTRB(0, 0, 8, 0),
+                                child: FilledButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const RulePage()));
+                                  },
+                                  style: FilledButton.styleFrom(
+                                      backgroundColor: Color(0xFF816E94)),
+                                  child: Text(getAppLocalizations(context)!
+                                      .home_page_button_rules),
+                                ))),
+                        CountryFlag.fromCountryCode('FR',
+                            shape: const RoundedRectangle(12))
+                      ],
                     )
                   ],
                 ),
