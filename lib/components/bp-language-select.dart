@@ -1,6 +1,8 @@
+import 'package:bisrepetita/models/locale.dart';
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class BPLanguageSelect extends StatefulWidget {
   const BPLanguageSelect({super.key});
@@ -43,6 +45,8 @@ class _BPLanguageSelectState extends State<BPLanguageSelect> {
                             onChanged: (AvailableLocale? newLocale) {
                               setState(() {
                                 _locale = newLocale;
+                                Provider.of<BPLocale>(context, listen: false)
+                                    .locale = Locale(_locale!.fromIntl);
                                 Navigator.pop(context);
                               });
                             },

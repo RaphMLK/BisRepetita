@@ -1,3 +1,4 @@
+import 'package:bisrepetita/models/locale.dart';
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/HomePage.dart';
@@ -23,16 +24,21 @@ class MyApp extends StatelessWidget {
     final l10n = getAppLocalizations(context);
     final title = l10n?.title;
 
-    return MaterialApp(
-      title: title,
-      locale: Locale('fr'),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: HomePage(),
-    );
+    return ChangeNotifierProvider(
+        create: (context) => BPLocale(),
+        child: Consumer<BPLocale>(
+            builder: (context, bplocale, child) => MaterialApp(
+                  title: title,
+                  locale: bplocale.locale,
+                  localizationsDelegates:
+                      AppLocalizations.localizationsDelegates,
+                  supportedLocales: AppLocalizations.supportedLocales,
+                  theme: ThemeData(
+                    colorScheme:
+                        ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                    useMaterial3: true,
+                  ),
+                  home: HomePage(),
+                )));
   }
 }
