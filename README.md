@@ -20,12 +20,15 @@ I'm developping alone (just ask some friends to create questions), on Android St
 
 ## Roadmap
 
-The first version (V1.0) is currently finished with :
+The first version (v1.0) is currently finished with :
 - All the basics of the app : rules, players list, questions, elimination and result page.
 - Few questions (~30)
 - Only French Language
 
+The version v1.1 (Language Update) is finished :
+- Possibility to change the language of the app
+- English language added
+
 Next versions are planified :
-- V1.1 -> Languages Update : add at least one more language, English and maybe Portuguese
 - V1.2 -> Category Update : add more questions and classified by category
 - V1.3 -> Players Update : save the players and thier statistics (like number of win, games, master rounds etc...)
