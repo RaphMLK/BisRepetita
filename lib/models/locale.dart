@@ -1,10 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
 class BPLocale extends ChangeNotifier {
   Locale? _locale;
 
-  Locale? get locale => _locale;
+  Locale? get locale {
+    _locale ??= Locale(Platform.localeName);
+    return _locale;
+  }
 
   set locale(Locale? locale) {
     _locale = locale;
@@ -12,10 +17,6 @@ class BPLocale extends ChangeNotifier {
   }
 
   String getLocaleShortName() {
-    if (_locale == null) {
-      return Intl.shortLocale(Intl.getCurrentLocale());
-    } else {
-      return _locale!.languageCode;
-    }
+    return Intl.shortLocale(locale!.languageCode);
   }
 }
