@@ -5,5 +5,63 @@
   "home_page_title": "BisRepetita.\n",
   "home_page_subtitle": "Be Original.",
   "home_page_button_play": "Play",
-  "home_page_button_rules": "Rules"
+  "home_page_button_rules": "Rules",
+
+  "@RULES_PAGE": {},
+  "rules_page_title": "Rules",
+  "rules_page_1": "Choose the master who will answer first on phone.\nIt's better to put the first answer that comes to mind",
+  "rules_page_2": "The other players will answer to the same question aloud in turn.",
+  "rules_page_3": "When every players give his answer, the master will reveal his one, if someone have the same than the master, he is eliminated",
+  "rules_page_4": "Perform as many rounds as necessary until only one personne is left alive",
+
+  "@PLAYERS_PAGE": {},
+  "players_page_title": "Players",
+  "players_page_launch": "Start",
+  "players_page_2_players_minimum": "Minimum 2 players",
+
+  "@QUESTION_PAGE": {},
+  "question_page_title": "Question",
+  "question_page_write_answer": "Write your answer",
+  "question_page_confirm_answer": "Confirm",
+  "question_page_show_answer": "Show your answer",
+  "question_page_show_players": "See the players",
+  "question_page_answer_title": "Master answer :",
+
+  "@ELIMINATION_PAGE": {},
+  "elimination_page_title": "Eliminate ?",
+  "elimination_page_continue": "Continue",
+
+  "@RESULT_PAGE": {},
+  "result_page_title_no_winner": "Sorry...",
+  "result_page_title_winner": "Winner",
+  "result_page_text_no_winner": "Nobody won.\nThe master was original",
+  "result_page_text_winner": "Congrats {winner}!\nYou know well the master.",
+  "@result_page_text_winner": {
+    "description": "Message to celebrate the winner (one parameter)",
+    "placeholders": {
+      "winner": {
+        "type": "String",
+        "example": "Selma"
+      }
+    }
+  },
+  "result_page_end": "End of the round",
+
+  "@ADD_PLAYERS_LIST_COMPONENT": {},
+  "add_players_list_component_master": "Master",
+  "add_players_list_component_add": "Add",
+
+  "@ELIMINATE_PLAYERS_LIST_COMPONENT": {},
+  "eliminate_players_list_component_prompt_title": "Eliminate {name} ?",
+  "@eliminate_players_list_component_prompt_title": {
+    "description": "Prompt to confirm elimination (one parameter)",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Selma"
+      }
+    }
+  },
+  "eliminate_players_list_component_cancel": "No",
+  "eliminate_players_list_component_confirm": "Yes"
 }

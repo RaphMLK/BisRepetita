@@ -2,6 +2,7 @@ import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/elimination.dart';
+import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +20,7 @@ class _QuestionPageState extends State<QuestionPage> {
   bool _validMasterAnswer = false;
   bool _showAnswer = false;
   late Widget _widgetBelowQuestion;
-  String _buttonLabel = 'Valider';
+  String _buttonLabel = "";
   late String _masterAnswer;
 
   @override
@@ -44,8 +45,10 @@ class _QuestionPageState extends State<QuestionPage> {
   @override
   Widget build(BuildContext context) {
     return BPPage(
-        appBar:
-            BPAppBar(backButton: false, title: 'Question', closeButton: true),
+        appBar: BPAppBar(
+            backButton: false,
+            title: getAppLocalizations(context)!.question_page_title,
+            closeButton: true),
         child: Padding(
             padding: EdgeInsets.fromLTRB(32, 0, 32, 16),
             child: Column(
@@ -102,9 +105,7 @@ class _QuestionPageState extends State<QuestionPage> {
                                     color: _answerController.text != ""
                                         ? Colors.white
                                         : Color(0xFF7B2D26).withOpacity(0.6)),
-                                _answerController.text != ""
-                                    ? _buttonLabel
-                                    : 'Indiquez votre réponse'))))
+                                _getButtonLabel()))))
               ],
             )));
   }
@@ -114,15 +115,26 @@ class _QuestionPageState extends State<QuestionPage> {
       _validMasterAnswer = true;
       _masterAnswer = _answerController.text;
       _widgetBelowQuestion = SizedBox(height: 60);
-      _buttonLabel = 'Révéler la réponse';
+      _buttonLabel = getAppLocalizations(context)!.question_page_show_answer;
     } else if (!_showAnswer) {
       _showAnswer = true;
-      _buttonLabel = 'Voir les joueurs';
+      _buttonLabel = getAppLocalizations(context)!.question_page_show_players;
       _widgetBelowQuestion = answerMasterWidget();
     } else {
       Provider.of<Question>(context, listen: false).nextQuestion();
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => const EliminationPage()));
+    }
+  }
+
+  String _getButtonLabel() {
+    if (_buttonLabel == "") {
+      _buttonLabel = getAppLocalizations(context)!.question_page_confirm_answer;
+    }
+    if (_answerController.text != "") {
+      return _buttonLabel;
+    } else {
+      return getAppLocalizations(context)!.question_page_write_answer;
     }
   }
 
@@ -179,7 +191,7 @@ class _QuestionPageState extends State<QuestionPage> {
         child: ListTile(
       title: Text(
           style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w300),
-          'Réponse :'),
+          getAppLocalizations(context)!.question_page_answer_title),
       subtitle: Text(
           style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300),
           _masterAnswer),

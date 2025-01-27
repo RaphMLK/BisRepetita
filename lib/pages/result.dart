@@ -4,6 +4,7 @@ import 'package:bisrepetita/models/player.dart';
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/HomePage.dart';
+import 'package:bisrepetita/tools.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +20,9 @@ class ResultPage extends StatelessWidget {
     return BPPage(
         appBar: BPAppBar(
             backButton: false,
-            title: winner == null ? 'Dommage' : 'Gagnant·e',
+            title: winner == null
+                ? getAppLocalizations(context)!.result_page_title_no_winner
+                : getAppLocalizations(context)!.result_page_title_winner,
             closeButton: true),
         child: Padding(
           padding: EdgeInsets.fromLTRB(32, 0, 32, 16),
@@ -35,8 +38,10 @@ class ResultPage extends StatelessWidget {
                             fontWeight: FontWeight.w200,
                             color: Colors.white),
                         winner == null
-                            ? 'Personne n\'a gagné!\nLa·le chef·fe a été original·e.'
-                            : 'Bravo ${winner!.name}!\nTu connais bien la·le chef·fe.'),
+                            ? getAppLocalizations(context)!
+                                .result_page_text_no_winner
+                            : getAppLocalizations(context)!
+                                .result_page_text_winner(winner!.name)),
                   )),
               Flexible(
                   child: Center(
@@ -57,7 +62,7 @@ class ResultPage extends StatelessWidget {
                           ),
                           child: Text(
                               style: TextStyle(color: Colors.white),
-                              'Fin de la partie'))))
+                              getAppLocalizations(context)!.result_page_end))))
             ],
           ),
         ));

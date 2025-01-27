@@ -1,5 +1,6 @@
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/pages/result.dart';
+import 'package:bisrepetita/tools.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,7 +62,9 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                                                       fontSize: 24,
                                                       fontWeight:
                                                           FontWeight.w300),
-                                                  'Eliminer ${player.name} ?'),
+                                                  getAppLocalizations(context)!
+                                                      .eliminate_players_list_component_prompt_title(
+                                                          player.name)),
                                             ],
                                           ),
                                           SizedBox(height: 10),
@@ -83,7 +86,9 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                                                           GoogleFonts.poppins(
                                                               color:
                                                                   Colors.white),
-                                                      'Non')),
+                                                      getAppLocalizations(
+                                                              context)!
+                                                          .eliminate_players_list_component_cancel)),
                                               SizedBox(width: 8),
                                               TextButton(
                                                   onPressed: () {
@@ -110,7 +115,9 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                                                           GoogleFonts.poppins(
                                                               color:
                                                                   Colors.white),
-                                                      'Oui'))
+                                                      getAppLocalizations(
+                                                              context)!
+                                                          .eliminate_players_list_component_confirm))
                                             ],
                                           )
                                         ],

@@ -1,5 +1,6 @@
 import 'package:bisrepetita/models/player.dart';
 import 'package:bisrepetita/models/players-list.dart';
+import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -44,7 +45,8 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                     fontSize: 26,
                     color: Colors.white,
                     fontWeight: FontWeight.w300),
-                'Chef·fe'),
+                getAppLocalizations(context)!
+                    .add_players_list_component_master),
             contentPadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
             leading: IconButton(
                 onPressed: () {},
@@ -140,7 +142,8 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                           fontSize: 26,
                           color: Colors.white,
                           fontWeight: FontWeight.w300),
-                      'Ajouter'),
+                      getAppLocalizations(context)!
+                          .add_players_list_component_add),
                   contentPadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                   leading: IconButton(
                       onPressed: () {},

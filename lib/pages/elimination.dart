@@ -4,6 +4,7 @@ import 'package:bisrepetita/components/players/bp-players-eliminate-list.dart';
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/pages/question.dart';
 import 'package:bisrepetita/pages/result.dart';
+import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,8 +19,10 @@ class _EliminationPageState extends State<EliminationPage> {
   @override
   Widget build(BuildContext context) {
     return BPPage(
-        appBar:
-            BPAppBar(backButton: false, title: "Eliminer ?", closeButton: true),
+        appBar: BPAppBar(
+            backButton: false,
+            title: getAppLocalizations(context)!.elimination_page_title,
+            closeButton: true),
         child: Padding(
           padding: EdgeInsets.fromLTRB(32, 0, 32, 16),
           child: Column(
@@ -49,8 +52,10 @@ class _EliminationPageState extends State<EliminationPage> {
                         minimumSize: Size.fromHeight(40),
                         backgroundColor: Color(0xFF816E94),
                       ),
-                      child:
-                          Text(style: TextStyle(color: Colors.white), 'Suite'));
+                      child: Text(
+                          style: TextStyle(color: Colors.white),
+                          getAppLocalizations(context)!
+                              .elimination_page_continue));
                 })),
               )
             ],

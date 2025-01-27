@@ -5,5 +5,49 @@
   "home_page_title": "BisRepetita.\n",
   "home_page_subtitle": "Sois Original.",
   "home_page_button_play": "Jouer",
-  "home_page_button_rules": "Règles"
+  "home_page_button_rules": "Règles",
+
+  "@RULES_PAGE": {},
+  "rules_page_title": "Règles",
+  "rules_page_1": "Choisissez votre chef·fe qui devra répondre en premier à une question sur le téléphone.\nNous l’invitons à répondre le plus vite possible et écrire sa première idée sans trop réfléchir.",
+  "rules_page_2": "Les autres joueur·euses devront répondre à cette même question à voix haute chacun·e son tour.\nVous ne pouvez pas dire la même réponse qu’une autre personne.\nChacun·e doit avoir une réponse différente.",
+  "rules_page_3": "Dès que chaque joueur·euse aura donné sa réponse, votre chef·fe révélera sa réponse.\nSi une personne a la même réponse que votre chef·fe, alors iel est éliminé·e.",
+  "rules_page_4": "Effectuez autant de rounds nécessaires pour trouver votre gagnant·e (la dernière personne en vie).",
+
+  "@PLAYERS_PAGE": {},
+  "players_page_title": "Joueur·euses",
+  "players_page_launch": "Lancer la partie",
+  "players_page_2_players_minimum": "Minimum 2 joueurs",
+
+  "@QUESTION_PAGE": {},
+  "question_page_title": "Question",
+  "question_page_write_answer": "Indiquez votre réponse",
+  "question_page_confirm_answer": "Valider",
+  "question_page_show_answer": "Révéler la réponse",
+  "question_page_show_players": "Voir les joueurs",
+  "question_page_answer_title": "Réponse :",
+
+  "@ELIMINATION_PAGE": {},
+  "elimination_page_title": "Eliminer ?",
+  "elimination_page_continue": "Suite",
+
+  "@RESULT_PAGE": {},
+  "result_page_title_no_winner": "Dommage...",
+  "result_page_title_winner": "Gagnant·e",
+  "result_page_text_no_winner": "Personne n'a gagné!\nLa·le chef·fe a été original·e.",
+  "result_page_text_winner": "Bravo {winner}!\nTu connais bien la·le chef·fe.",
+  "@result_page_text_winner": {
+    "description": "Message to celebrate the winner (one parameter)",
+    "placeholders": {
+      "winner": {
+        "type": "String",
+        "example": "Selma"
+      }
+    }
+  },
+  "result_page_end": "Fin de la partie",
+
+  "@ADD_PLAYERS_LIST_COMPONENT": {},
+  "add_players_list_component_master": "Chef·fe",
+  "add_players_list_component_add": "Ajouter"
 }
