@@ -1,14 +1,10 @@
 import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/models/player.dart';
-import 'package:bisrepetita/models/players-list.dart';
-import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/HomePage.dart';
 import 'package:bisrepetita/tools.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class ResultPage extends StatelessWidget {
   final Player? winner;
@@ -47,10 +43,6 @@ class ResultPage extends StatelessWidget {
                   child: Center(
                       child: FilledButton(
                           onPressed: () {
-                            Provider.of<Question>(context, listen: false)
-                                .restart();
-                            Provider.of<PlayersList>(context, listen: false)
-                                .restart();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

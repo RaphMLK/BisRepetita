@@ -49,5 +49,19 @@
 
   "@ADD_PLAYERS_LIST_COMPONENT": {},
   "add_players_list_component_master": "Chef·fe",
-  "add_players_list_component_add": "Ajouter"
+  "add_players_list_component_add": "Ajouter",
+
+  "@ELIMINATE_PLAYERS_LIST_COMPONENT": {},
+  "eliminate_players_list_component_prompt_title": "Eliminer {name} ?",
+  "@eliminate_players_list_component_prompt_title": {
+    "description": "Prompt to confirm elimination (one parameter)",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Selma"
+      }
+    }
+  },
+  "eliminate_players_list_component_cancel": "Non",
+  "eliminate_players_list_component_confirm": "Oui"
 }

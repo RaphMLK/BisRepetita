@@ -1,0 +1,27 @@
+{
+  "cat1": [
+    "Name a town from Hauts de France",
+    "Name a Swiss canton",
+    "Name a fruit"
+  ],
+  "cat2": [
+    "Name a figure",
+    "Name a Harry Potter movie",
+    "Name one of the planets in the Solar System"
+  ],
+  "cat3": [
+    "Name a day of the week",
+    "Name a finger",
+    "Name a portuguese club who won the national championship"
+  ],
+  "cat4": [
+    "Name one of the Fantastic Four",
+    "Name an ocean",
+    "Name a letter used to describe a blood group"
+  ],
+  "cat5": [
+    "Messi or CR7 ?",
+    "Books or Movies ?",
+    "Winter or Summer ?"
+  ]
+}

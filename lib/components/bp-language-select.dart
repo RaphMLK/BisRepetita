@@ -1,63 +1,48 @@
 import 'package:bisrepetita/models/locale.dart';
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-class BPLanguageSelect extends StatefulWidget {
+class BPLanguageSelect extends StatelessWidget {
   const BPLanguageSelect({super.key});
 
   @override
-  State<StatefulWidget> createState() => _BPLanguageSelectState();
-}
-
-class _BPLanguageSelectState extends State<BPLanguageSelect> {
-  AvailableLocale? _locale;
-
-  @override
-  void initState() {
-    super.initState();
-    _locale = AvailableLocale.values
-        .where((locale) =>
-            locale.fromIntl == Intl.shortLocale(Intl.getCurrentLocale()))
-        .first;
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        showModalBottomSheet(
-            context: context,
-            isScrollControlled: false,
-            showDragHandle: true,
-            builder: (context) => Padding(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 16),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    for (final locale in AvailableLocale.values)
-                      ListTile(
-                        title: Text(locale.name),
-                        leading: Radio<AvailableLocale>(
-                            value: locale,
-                            groupValue: _locale,
-                            onChanged: (AvailableLocale? newLocale) {
-                              setState(() {
-                                _locale = newLocale;
+    return Consumer<BPLocale>(builder: (context, bpLocale, child) {
+      var currentLocale = AvailableLocale.values
+          .where((locale) => locale.fromIntl == bpLocale.getLocaleShortName())
+          .first;
+      return GestureDetector(
+        onTap: () {
+          showModalBottomSheet(
+              context: context,
+              isScrollControlled: false,
+              showDragHandle: true,
+              builder: (context) => Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, 16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      for (final locale in AvailableLocale.values)
+                        ListTile(
+                          title: Text(locale.name),
+                          leading: Radio<AvailableLocale>(
+                              value: locale,
+                              groupValue: currentLocale,
+                              onChanged: (AvailableLocale? newLocale) {
                                 Provider.of<BPLocale>(context, listen: false)
-                                    .locale = Locale(_locale!.fromIntl);
+                                    .locale = Locale(locale.fromIntl);
                                 Navigator.pop(context);
-                              });
-                            },
-                            activeColor: Color(0xFF816E94)),
-                      )
-                  ],
-                )));
-      },
-      child: CountryFlag.fromCountryCode(_locale!.flag_code,
-          shape: const RoundedRectangle(12)),
-    );
+                              },
+                              activeColor: Color(0xFF816E94)),
+                        )
+                    ],
+                  )));
+        },
+        child: CountryFlag.fromCountryCode(currentLocale.flag_code,
+            shape: const RoundedRectangle(12)),
+      );
+    });
   }
 }
 

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:bisrepetita/models/locale.dart';
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
@@ -25,9 +26,12 @@ class Question extends ChangeNotifier {
     if (currentQuestion != "") return;
 
     if (questions.isEmpty) {
+      String localShortName =
+          Provider.of<BPLocale>(context).getLocaleShortName();
+
       // load questions from json files
       String data = await DefaultAssetBundle.of(context)
-          .loadString("assets/questions/questions.json");
+          .loadString("assets/questions/" + localShortName + "_questions.json");
       questions = jsonDecode(data);
     }
 
