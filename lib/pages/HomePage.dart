@@ -1,7 +1,6 @@
 import 'package:bisrepetita/components/bp-language-select.dart';
 import 'package:bisrepetita/components/bp-page.dart';
-import 'package:bisrepetita/models/players-list.dart';
-import 'package:bisrepetita/models/question.dart';
+import 'package:bisrepetita/models/game.dart';
 import 'package:bisrepetita/pages/players.dart';
 import 'package:bisrepetita/pages/rules.dart';
 import 'package:bisrepetita/tools.dart';
@@ -46,9 +45,8 @@ class HomePage extends StatelessWidget {
                   children: [
                     FilledButton(
                       onPressed: () {
-                        Provider.of<Question>(context, listen: false).restart();
-                        Provider.of<PlayersList>(context, listen: false)
-                            .restart();
+                        Provider.of<Game>(context, listen: false)
+                            .restart(context);
                         Navigator.push(
                             context,
                             MaterialPageRoute(

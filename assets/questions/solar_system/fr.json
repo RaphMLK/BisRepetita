@@ -1,0 +1,27 @@
+{
+  "cat1": [
+    "fr_cat1_question1_solar_system",
+    "fr_cat1_question2_solar_system",
+    "fr_cat1_question3_solar_system"
+  ],
+  "cat2": [
+    "fr_cat2_question1_solar_system",
+    "fr_cat2_question2_solar_system",
+    "fr_cat3_question3_solar_system"
+  ],
+  "cat3": [
+    "fr_cat3_question1_solar_system",
+    "fr_cat3_question2_solar_system",
+    "fr_cat3_question3_solar_system"
+  ],
+  "cat4": [
+    "fr_cat4_question1_solar_system",
+    "fr_cat4_question2_solar_system",
+    "fr_cat4_question3_solar_system"
+  ],
+  "cat5": [
+    "fr_cat5_question1_solar_system",
+    "fr_cat5_question2_solar_system",
+    "fr_cat5_question3_solar_system"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "cat1": [
+    "fr_cat1_question1_superheros",
+    "fr_cat1_question2_superheros",
+    "fr_cat1_question3_superheros"
+  ],
+  "cat2": [
+    "fr_cat2_question1_superheros",
+    "fr_cat2_question2_superheros",
+    "fr_cat3_question3_superheros"
+  ],
+  "cat3": [
+    "fr_cat3_question1_superheros",
+    "fr_cat3_question2_superheros",
+    "fr_cat3_question3_superheros"
+  ],
+  "cat4": [
+    "fr_cat4_question1_superheros",
+    "fr_cat4_question2_superheros",
+    "fr_cat4_question3_superheros"
+  ],
+  "cat5": [
+    "fr_cat5_question1_superheros",
+    "fr_cat5_question2_superheros",
+    "fr_cat5_question3_superheros"
+  ]
+}

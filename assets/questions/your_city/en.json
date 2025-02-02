@@ -1,0 +1,27 @@
+{
+  "cat1": [
+    "en_cat1_question1_your_city",
+    "en_cat1_question2_your_city",
+    "en_cat1_question3_your_city"
+  ],
+  "cat2": [
+    "en_cat2_question1_your_city",
+    "en_cat2_question2_your_city",
+    "en_cat3_question3_your_city"
+  ],
+  "cat3": [
+    "en_cat3_question1_your_city",
+    "en_cat3_question2_your_city",
+    "en_cat3_question3_your_city"
+  ],
+  "cat4": [
+    "en_cat4_question1_your_city",
+    "en_cat4_question2_your_city",
+    "en_cat4_question3_your_city"
+  ],
+  "cat5": [
+    "en_cat5_question1_your_city",
+    "en_cat5_question2_your_city",
+    "en_cat5_question3_your_city"
+  ]
+}

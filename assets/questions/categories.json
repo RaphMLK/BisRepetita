@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "id": "video_games",
+      "icon": "sports_esports",
+      "en_label": "Video Games",
+      "fr_label": "Jeux Vidéo",
+      "folder": "video_games"
+    },
+    {
+      "id": "solar_system",
+      "icon": "flare",
+      "en_label": "Solar System",
+      "fr_label": "Système Solaire",
+      "folder": "solar_system"
+    },
+    {
+      "id": "your_city",
+      "icon": "location_city",
+      "en_label": "Your city",
+      "fr_label": "Ta ville",
+      "folder": "your_city"
+    },
+    {
+      "id": "solar_system",
+      "icon": "flare",
+      "en_label": "Solar System",
+      "fr_label": "Système Solaire",
+      "folder": "solar_system"
+    },
+    {
+      "id": "french_cuisine",
+      "icon": "skillet",
+      "en_label": "French cuisine",
+      "fr_label": "Cuisine Française",
+      "folder": "french_cuisine"
+    },
+    {
+      "id": "superheros",
+      "icon": "comic_bubble",
+      "en_label": "Superheros",
+      "fr_label": "Superhéros",
+      "folder": "superheros"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "cat1": [
+    "fr_cat1_question1_french_cuisine",
+    "fr_cat1_question2_french_cuisine",
+    "fr_cat1_question3_french_cuisine"
+  ],
+  "cat2": [
+    "fr_cat2_question1_french_cuisine",
+    "fr_cat2_question2_french_cuisine",
+    "fr_cat3_question3_french_cuisine"
+  ],
+  "cat3": [
+    "fr_cat3_question1_french_cuisine",
+    "fr_cat3_question2_french_cuisine",
+    "fr_cat3_question3_french_cuisine"
+  ],
+  "cat4": [
+    "fr_cat4_question1_french_cuisine",
+    "fr_cat4_question2_french_cuisine",
+    "fr_cat4_question3_french_cuisine"
+  ],
+  "cat5": [
+    "fr_cat5_question1_french_cuisine",
+    "fr_cat5_question2_french_cuisine",
+    "fr_cat5_question3_french_cuisine"
+  ]
+}

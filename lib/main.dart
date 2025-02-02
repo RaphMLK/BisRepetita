@@ -1,3 +1,5 @@
+import 'package:bisrepetita/models/category.dart';
+import 'package:bisrepetita/models/game.dart';
 import 'package:bisrepetita/models/locale.dart';
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/models/question.dart';
@@ -11,7 +13,9 @@ void main() {
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => PlayersList()),
-      ChangeNotifierProvider(create: (context) => Question())
+      ChangeNotifierProvider(create: (context) => Question()),
+      ChangeNotifierProvider(create: (context) => Category()),
+      ChangeNotifierProvider(create: (context) => Game())
     ], child: const MyApp()),
   );
 }
@@ -23,6 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = getAppLocalizations(context);
     final title = l10n?.title;
+    Provider.of<Category>(context).loadAllCategory(context);
 
     return ChangeNotifierProvider(
         create: (context) => BPLocale(),
