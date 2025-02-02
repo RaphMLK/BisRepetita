@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 class Category extends ChangeNotifier {
   late CategoryObj currentCategory;
   late List<CategoryObj> allCategories;
+  late List<CategoryObj> randomCategoryList;
 
   void loadAllCategory(BuildContext context) async {
     String data = await DefaultAssetBundle.of(context)
@@ -13,11 +14,22 @@ class Category extends ChangeNotifier {
     Map<String, dynamic> json = jsonDecode(data);
     List<dynamic> categories = json["categories"];
     allCategories = _castListJsonToCategoryObj(categories);
-    currentCategory = allCategories.first;
   }
 
-  List<CategoryObj> getRandomCategories(int nb) {
-    return randomItemsInList(allCategories, nb);
+  void generateRandomCategories(int nb) {
+    randomCategoryList = randomItemsInList(allCategories, nb);
+  }
+
+  void selectCategory(CategoryObj? category) {
+    if (category != null) {
+      currentCategory = category;
+    } else {
+      List<CategoryObj> noSelectedCategories = List.from(allCategories);
+      noSelectedCategories = noSelectedCategories
+          .where((category) => !randomCategoryList.contains(category))
+          .toList();
+      currentCategory = (noSelectedCategories..shuffle()).first;
+    }
   }
 
   List<CategoryObj> _castListJsonToCategoryObj(List<dynamic> listObj) {

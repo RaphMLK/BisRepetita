@@ -37,6 +37,7 @@ dependencies:
   intl: any
   flutter_localizations:
     sdk: flutter
+  material_symbols_icons: ^4.2801.1
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,12 @@ flutter:
 
   assets:
     - assets/
+    - assets/questions/
+    - assets/questions/french_cuisine/
+    - assets/questions/solar_system/
+    - assets/questions/superheros/
+    - assets/questions/video_games/
+    - assets/questions/your_city/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

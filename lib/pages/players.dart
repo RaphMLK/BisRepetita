@@ -1,8 +1,9 @@
 import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/components/players/bp-players-add-list.dart';
+import 'package:bisrepetita/models/category.dart';
 import 'package:bisrepetita/models/players-list.dart';
-import 'package:bisrepetita/pages/question.dart';
+import 'package:bisrepetita/pages/categories.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -38,11 +39,12 @@ class _PlayersPageState extends State<PlayersPage> {
                   return FilledButton(
                       onPressed: players.players.length >= 2
                           ? () {
+                              Provider.of<Category>(context, listen: false)
+                                  .generateRandomCategories(3);
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const QuestionPage()));
+                                      builder: (context) => CategoriesPage()));
                             }
                           : null,
                       style: FilledButton.styleFrom(

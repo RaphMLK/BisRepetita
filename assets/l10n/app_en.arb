@@ -47,6 +47,23 @@
   },
   "result_page_end": "End of the round",
 
+  "@CATEGORIES_PAGE": {},
+  "categories_page_title": "Categories",
+  "categories_page_random_category": "Random",
+  "categories_page_select_category": "Select the category",
+  "categories_page_confirm_category": "Confirm",
+  "categories_page_start": "Start",
+  "categories_page_confirmed": "The category is :\n{category}",
+  "@categories_page_confirmed": {
+    "description": "Message to confirm the category (one parameter)",
+    "placeholders": {
+      "category": {
+        "type": "String",
+        "example": "Video Games"
+      }
+    }
+  },
+
   "@ADD_PLAYERS_LIST_COMPONENT": {},
   "add_players_list_component_master": "Master",
   "add_players_list_component_add": "Add",

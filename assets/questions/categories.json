@@ -22,13 +22,6 @@
       "folder": "your_city"
     },
     {
-      "id": "solar_system",
-      "icon": "flare",
-      "en_label": "Solar System",
-      "fr_label": "Système Solaire",
-      "folder": "solar_system"
-    },
-    {
       "id": "french_cuisine",
       "icon": "skillet",
       "en_label": "French cuisine",
@@ -37,7 +30,7 @@
     },
     {
       "id": "superheros",
-      "icon": "comic_bubble",
+      "icon": "domino_mask",
       "en_label": "Superheros",
       "fr_label": "Superhéros",
       "folder": "superheros"

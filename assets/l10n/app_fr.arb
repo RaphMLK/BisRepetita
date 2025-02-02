@@ -47,6 +47,23 @@
   },
   "result_page_end": "Fin de la partie",
 
+  "@CATEGORIES_PAGE": {},
+  "categories_page_title": "Catégories",
+  "categories_page_random_category": "Mystère",
+  "categories_page_select_category": "Selectionner une catégorie",
+  "categories_page_confirm_category": "Confirmer",
+  "categories_page_start": "Commencer",
+  "categories_page_confirmed": "La catégorie est :\n{category}",
+  "@categories_page_confirmed": {
+    "description": "Message to confirm the category (one parameter)",
+    "placeholders": {
+      "category": {
+        "type": "String",
+        "example": "Jeux Vidéos"
+      }
+    }
+  },
+
   "@ADD_PLAYERS_LIST_COMPONENT": {},
   "add_players_list_component_master": "Chef·fe",
   "add_players_list_component_add": "Ajouter",
