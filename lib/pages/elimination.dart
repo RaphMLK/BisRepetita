@@ -8,14 +8,9 @@ import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class EliminationPage extends StatefulWidget {
+class EliminationPage extends StatelessWidget {
   const EliminationPage({super.key});
 
-  @override
-  State<StatefulWidget> createState() => _EliminationPageState();
-}
-
-class _EliminationPageState extends State<EliminationPage> {
   @override
   Widget build(BuildContext context) {
     return BPPage(
