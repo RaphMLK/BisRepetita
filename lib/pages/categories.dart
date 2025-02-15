@@ -1,6 +1,7 @@
 import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/models/category.dart';
+import 'package:bisrepetita/models/locale.dart';
 import 'package:bisrepetita/pages/question.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
@@ -82,6 +83,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
 
   Widget _categoryListView() {
     var category = context.read<Category>();
+    var bpLocale = context.read<BPLocale>();
     return ListView(children: [
       for (final category in category.randomCategoryList)
         GestureDetector(
@@ -111,7 +113,10 @@ class _CategoriesPageState extends State<CategoriesPage> {
                         fontSize: 26,
                         color: Colors.white,
                         fontWeight: FontWeight.w300),
-                    category.en_label),
+                    switch (bpLocale.getLocaleShortName()) {
+                      'fr' => category.fr_label,
+                      String() => category.en_label, // Default value
+                    }),
                 contentPadding: EdgeInsets.zero,
                 leading: Icon(
                   color: Colors.white,
@@ -167,14 +172,18 @@ class _CategoriesPageState extends State<CategoriesPage> {
   }
 
   Widget _confirmedCategoryView() {
+    var bpLocale = context.read<BPLocale>();
     return Consumer<Category>(builder: (context, category, child) {
       return Center(
         child: Text(
             textAlign: TextAlign.center,
             style: GoogleFonts.poppins(
                 fontSize: 38, fontWeight: FontWeight.w200, color: Colors.white),
-            getAppLocalizations(context)!
-                .categories_page_confirmed(category.currentCategory.en_label)),
+            getAppLocalizations(context)!.categories_page_confirmed(
+                switch (bpLocale.getLocaleShortName()) {
+              'fr' => category.currentCategory.fr_label,
+              String() => category.currentCategory.en_label, // Default value
+            })),
       );
     });
   }
