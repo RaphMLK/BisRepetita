@@ -107,7 +107,7 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                       fontWeight: FontWeight.w300,
                     ),
                     onTapOutside: (event) {
-                      _cancelPlayerInput();
+                      _addAndValidatePlayer(context);
                     },
                     onSubmitted: (event) {
                       _addAndValidatePlayer(context);
@@ -229,13 +229,6 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
     var cloneList = new List<Player>.from(players.players);
     cloneList.add(new Player(_addPlayerController.text));
     players.players = cloneList;
-    _addPlayerController.clear();
-  }
-
-  void _cancelPlayerInput() {
-    setState(() {
-      _addPlayerInput = false;
-    });
     _addPlayerController.clear();
   }
 
