@@ -6,18 +6,23 @@ import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/HomePage.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
-  runApp(
-    MultiProvider(providers: [
-      ChangeNotifierProvider(create: (context) => PlayersList()),
-      ChangeNotifierProvider(create: (context) => Question()),
-      ChangeNotifierProvider(create: (context) => Category()),
-      ChangeNotifierProvider(create: (context) => Game())
-    ], child: const MyApp()),
-  );
+  // Necessary before to lock the screen orientation
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) => runApp(
+            MultiProvider(providers: [
+              ChangeNotifierProvider(create: (context) => PlayersList()),
+              ChangeNotifierProvider(create: (context) => Question()),
+              ChangeNotifierProvider(create: (context) => Category()),
+              ChangeNotifierProvider(create: (context) => Game())
+            ], child: const MyApp()),
+          ));
 }
 
 class MyApp extends StatelessWidget {
