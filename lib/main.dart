@@ -7,6 +7,7 @@ import 'package:bisrepetita/pages/HomePage.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -40,6 +41,15 @@ class MyApp extends StatelessWidget {
             builder: (context, bplocale, child) => MaterialApp(
                   title: title,
                   locale: bplocale.locale,
+                  // Used to set the default language following the device locale
+                  localeListResolutionCallback: (allLocales, supportedLocales) {
+                    final localeShortName =
+                        Intl.shortLocale(bplocale.locale!.languageCode);
+                    if (localeShortName == 'fr') {
+                      return const Locale('fr');
+                    }
+                    return const Locale('en');
+                  },
                   localizationsDelegates:
                       AppLocalizations.localizationsDelegates,
                   supportedLocales: AppLocalizations.supportedLocales,
