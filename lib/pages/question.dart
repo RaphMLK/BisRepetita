@@ -121,7 +121,9 @@ class _QuestionPageState extends State<QuestionPage> {
       _buttonLabel = getAppLocalizations(context)!.question_page_show_players;
       _widgetBelowQuestion = answerMasterWidget();
     } else {
-      Provider.of<Question>(context, listen: false).nextQuestion();
+      // To hide the next question before to navigate to the next page
+      WidgetsBinding.instance.addPostFrameCallback(
+          (_) => Provider.of<Question>(context, listen: false).nextQuestion());
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => const EliminationPage()));
     }
