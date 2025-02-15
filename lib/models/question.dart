@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:bisrepetita/exceptions/NoMoreQuestionsException.dart';
 import 'package:bisrepetita/models/category.dart';
 import 'package:bisrepetita/models/locale.dart';
 import 'package:bisrepetita/models/players-list.dart';
@@ -49,7 +50,7 @@ class Question extends ChangeNotifier {
       dynamic randomQuestion = (questionFromType..shuffle()).firstOrNull;
       if (randomQuestion == null &&
           !_isRemainingQuestions(_getAvailableQuestionType(nbPlayerAlive))) {
-        question = 'no more question';
+        throw NoMoreQuestionsException('End of the game'); //no more question
       } else if (randomQuestion != null &&
           !_questionsAlreadyAsked.contains(randomQuestion.toString())) {
         question = randomQuestion.toString();
@@ -108,6 +109,12 @@ class Question extends ChangeNotifier {
       if (questionInThisType.isNotEmpty) return true;
     }
     return false;
+  }
+
+  bool haveOtherQuestions(BuildContext context) {
+    var playersWatcher = context.read<PlayersList>();
+    int nbPlayerAlive = playersWatcher.getAlivePlayers().length;
+    return _isRemainingQuestions(_getAvailableQuestionType(nbPlayerAlive));
   }
 
   void nextQuestion() {

@@ -35,6 +35,7 @@
   "result_page_title_no_winner": "Dommage...",
   "result_page_title_winner": "Gagnant·e",
   "result_page_text_no_winner": "Personne n'a gagné!\nLa·le chef·fe a été original·e.",
+  "result_page_text_no_more_question": "Le·la chef·fe a perdu.\nVous avez fini toutes les questions.",
   "result_page_text_winner": "Bravo {winner}!\nTu connais bien la·le chef·fe.",
   "@result_page_text_winner": {
     "description": "Message to celebrate the winner (one parameter)",

@@ -2,6 +2,7 @@ import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/components/players/bp-players-eliminate-list.dart';
 import 'package:bisrepetita/models/players-list.dart';
+import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/question.dart';
 import 'package:bisrepetita/pages/result.dart';
 import 'package:bisrepetita/tools.dart';
@@ -27,10 +28,19 @@ class EliminationPage extends StatelessWidget {
                 flex: 1,
                 child: Center(child:
                     Consumer<PlayersList>(builder: (context, players, child) {
+                  var questions = context.read<Question>();
                   return FilledButton(
                       onPressed: () {
                         var alivePlayers = players.getAlivePlayers();
-                        if (alivePlayers.length >= 2) {
+                        var haveOtherQuestion =
+                            questions.haveOtherQuestions(context);
+                        if (!haveOtherQuestion) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ResultPage(noMoreQuestion: true)));
+                        } else if (alivePlayers.length >= 2) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(

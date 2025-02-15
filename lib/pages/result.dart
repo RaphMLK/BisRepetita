@@ -8,8 +8,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ResultPage extends StatelessWidget {
   final Player? winner;
+  final bool? noMoreQuestion;
 
-  const ResultPage({super.key, this.winner});
+  const ResultPage({super.key, this.winner, this.noMoreQuestion});
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +35,11 @@ class ResultPage extends StatelessWidget {
                             fontWeight: FontWeight.w200,
                             color: Colors.white),
                         winner == null
-                            ? getAppLocalizations(context)!
-                                .result_page_text_no_winner
+                            ? noMoreQuestion == true
+                                ? getAppLocalizations(context)!
+                                    .result_page_text_no_more_question
+                                : getAppLocalizations(context)!
+                                    .result_page_text_no_winner
                             : getAppLocalizations(context)!
                                 .result_page_text_winner(winner!.name)),
                   )),

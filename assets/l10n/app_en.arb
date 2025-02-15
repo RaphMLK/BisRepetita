@@ -35,6 +35,7 @@
   "result_page_title_no_winner": "Sorry...",
   "result_page_title_winner": "Winner",
   "result_page_text_no_winner": "Nobody won.\nThe master was original",
+  "result_page_text_no_more_question": "The master lost.\nYou finished all the questions.",
   "result_page_text_winner": "Congrats {winner}!\nYou know well the master.",
   "@result_page_text_winner": {
     "description": "Message to celebrate the winner (one parameter)",
