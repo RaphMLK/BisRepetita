@@ -1,27 +1,37 @@
 {
   "cat1": [
-    "fr_cat1_question1_your_city",
-    "fr_cat1_question2_your_city",
-    "fr_cat1_question3_your_city"
+    "Cite une autre ville du pays de ta ville",
+    "Cite une ville voisine de ta ville",
+    "Cite une lettre de ta ville",
+    "Cite une raison de partir de ta ville",
+    "Cite une raison de venir dans ta ville"
   ],
   "cat2": [
-    "fr_cat2_question1_your_city",
-    "fr_cat2_question2_your_city",
-    "fr_cat3_question3_your_city"
+    "Cite un bar de ta ville",
+    "Cite un restaurant de ta ville",
+    "Cite un quartier de ta ville",
+    "Cite un musée de ta ville",
+    "Cite un moyen de te déplacer dans ta ville"
   ],
   "cat3": [
-    "fr_cat3_question1_your_city",
-    "fr_cat3_question2_your_city",
-    "fr_cat3_question3_your_city"
+    "Cite un restaurant à faire entre copains dans ta ville",
+    "Cite un bar pas cher dans ta ville",
+    "Cite un parc de ta ville",
+    "Cite un appartement d'un de tes potes de ta ville",
+    "Cite un bar à éviter pour un date dans ta ville"
   ],
   "cat4": [
-    "fr_cat4_question1_your_city",
-    "fr_cat4_question2_your_city",
-    "fr_cat4_question3_your_city"
+    "Cite une boîte de nuit de ta ville",
+    "Cite un bar pour faire un date dans ta ville",
+    "Cite un restaurant pour faire un date dans ta ville",
+    "Cite un de tes endroits préférés de ta ville",
+    "Cite un restaurant à éviter pour un date dans ta ville"
   ],
   "cat5": [
-    "fr_cat5_question1_your_city",
-    "fr_cat5_question2_your_city",
-    "fr_cat5_question3_your_city"
+    "Cite un restaurant cher de ta ville",
+    "Cite un monument de ta ville",
+    "Cite un mauvais restaurant de ta ville",
+    "Cite un club de sport de ta ville",
+    "Cite une gare de ta ville"
   ]
 }

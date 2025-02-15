@@ -1,0 +1,37 @@
+{
+  "cat1": [
+    "Name a LaLiga club",
+    "Name a Ligue 1 club",
+    "Name a country that has won the World Cup",
+    "Name a country that has hosted the World Cup",
+    "Name a French player"
+  ],
+  "cat2": [
+    "Name a club that has won the Champions League",
+    "Name a player who has won the Ballon d'Or",
+    "Name a Premier League stadium",
+    "Name a Brazilian club",
+    "Name an MLS club"
+  ],
+  "cat3": [
+    "Name a Portuguese club that has won the national championship",
+    "Name a Big 5 league",
+    "Name an Eredivisie club",
+    "Name a Serie A coach",
+    "Name a club from the South of France"
+  ],
+  "cat4": [
+    "Name a club located on an island in Europe",
+    "Name a Liga Portugal club outside Lisbon",
+    "Name a club from London",
+    "Name a non-European player who has won the Ballon d'Or",
+    "Name a Saudi Arabian club"
+  ],
+  "cat5": [
+    "Name a Corsican club",
+    "Name a club from Paris",
+    "Name a club from Milan",
+    "Name a club from Berlin",
+    "Name a club from Madrid"
+  ]
+}

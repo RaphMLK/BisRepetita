@@ -1,0 +1,37 @@
+{
+  "cat1": [
+    "Cite une catégorie de récompenses au César",
+    "Cite un film français",
+    "Cite un acteur français",
+    "Cite une actrice française"
+  ],
+  "cat2": [
+    "Cite un film d'animation français",
+    "Cite un film de Louis de Fines",
+    "Cite un·e réalisateur·trice français·e",
+    "Cite un film avec Alain Chabat",
+    "Cite une série de film français (au moins 3 films)",
+    "Cite un film international avec au moins un·e acteur·trice français·e"
+  ],
+  "cat3": [
+    "Cite un film de Quentin Dupieux",
+    "Cite un film Astérix",
+    "Cite un film de la série 'Les Gendarmes'",
+    "Cite un film avec Pierre Niney",
+    "Cite une personne du cinéma français concerné par une affaire de VSS",
+    "Cite un film avec Christian Clavier"
+  ],
+  "cat4": [
+    "Cite un film de Dany Boon",
+    "Cite un acteur des Tuches",
+    "Cite un film avec Adèle Exarchopoulos",
+    "Cite un acteur de 'Bienvenue chez les Ch'tis'",
+    "Cite un film parlant de la police française"
+  ],
+  "cat5": [
+    "Cite un·e acteur·trice français·e ayant gagné un Oscar",
+    "Cite un OSS117",
+    "Cite un film 'Les Bronzés'",
+    "Cite une marque qui représente des cinémas en France"
+  ]
+}

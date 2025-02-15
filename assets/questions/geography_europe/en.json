@@ -1,0 +1,43 @@
+{
+  "cat1": [
+    "Name a European capital",
+    "Name a country in the European Union",
+    "Name a city in Germany",
+    "Name a city in Italy",
+    "Name a European country ending in 'E'"
+  ],
+  "cat2": [
+    "Name a country that shares a border with France",
+    "Name a country crossed by the Danube",
+    "Name a European monarchy",
+    "Name a European country that doesn't use the Euro",
+    "Name a region in Italy",
+    "Name a European country with red on its flag"
+  ],
+  "cat3": [
+    "Name a city in Finland",
+    "Name a city in Portugal",
+    "Name a European city that starts with 'V'",
+    "Name a city in Turkey",
+    "Name a European country with French as an official language"
+  ],
+  "cat4": [
+    "Name a Swiss canton",
+    "Name a European country located on one or more islands",
+    "Name a country that shares a border with Belgium",
+    "Name a Belgian region",
+    "Name a Benelux country",
+    "Name a Scandinavian country",
+    "Name a nation of the United Kingdom",
+    "Name a Greek island",
+    "Name a city in Poland"
+  ],
+  "cat5": [
+    "Name a former European country",
+    "Name a city in Sweden",
+    "Name a country from the former Czechoslovakia",
+    "Name a European country currently at war",
+    "Name a country on the Iberian Peninsula",
+    "Name a European country that starts with 'L'"
+  ]
+}

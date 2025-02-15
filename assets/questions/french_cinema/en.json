@@ -1,0 +1,37 @@
+{
+  "cat1": [
+    "Name an award category at the César Awards",
+    "Name a French film",
+    "Name a French actor",
+    "Name a French actress"
+  ],
+  "cat2": [
+    "Name a French animated film",
+    "Name a film by Louis de Funès",
+    "Name a French director",
+    "Name a film with Alain Chabat",
+    "Name a French film series (at least 3 films)",
+    "Name an international film with at least one French actor or actress"
+  ],
+  "cat3": [
+    "Name a film by Quentin Dupieux",
+    "Name an Astérix film",
+    "Name a film from the 'Les Gendarmes' series",
+    "Name a film with Pierre Niney",
+    "Name a person from French cinema involved in a sexual violence case",
+    "Name a film with Christian Clavier"
+  ],
+  "cat4": [
+    "Name a film by Dany Boon",
+    "Name an actor from 'Les Tuches'",
+    "Name a film with Adèle Exarchopoulos",
+    "Name an actor from 'Welcome to the Sticks' ('Bienvenue chez les Ch'tis')",
+    "Name a film about the French police"
+  ],
+  "cat5": [
+    "Name a French actor or actress who has won an Oscar",
+    "Name an OSS 117 film",
+    "Name a 'Les Bronzés' film",
+    "Name a brand representing cinemas in France"
+  ]
+}

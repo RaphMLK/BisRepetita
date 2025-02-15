@@ -1,27 +1,46 @@
 {
   "cat1": [
-    "en_cat1_question1_video_games",
-    "en_cat1_question2_video_games",
-    "en_cat1_question3_video_games"
+    "Name a League of Legends character",
+    "Name a Pokémon",
+    "Name a Minecraft block",
+    "Name a Mario character",
+    "Name a Ubisoft game",
+    "Name a mobile game",
+    "Name a Nintendo game",
+    "Name a Rockstar game"
   ],
   "cat2": [
-    "en_cat2_question1_video_games",
-    "en_cat2_question2_video_games",
-    "en_cat3_question3_video_games"
+    "Name a game or game series adapted into a movie or series",
+    "Name a game based on one or more movies",
+    "Name a sports game",
+    "Name a horror game",
+    "Name a video game publisher",
+    "Name a Nintendo console"
   ],
   "cat3": [
-    "en_cat3_question1_video_games",
-    "en_cat3_question2_video_games",
-    "en_cat3_question3_video_games"
+    "Name a Minecraft monster",
+    "Name a Minecraft ore",
+    "Name a color used for one of the Pokémon games",
+    "Name a people from the world of Zelda",
+    "Name a racing game"
   ],
   "cat4": [
-    "en_cat4_question1_video_games",
-    "en_cat4_question2_video_games",
-    "en_cat4_question3_video_games"
+    "Name a symbol of the four main PlayStation controller buttons",
+    "Name a Tetris block shape",
+    "Name a Wii accessory",
+    "Name a playable character from GTA V",
+    "Name an Elder Scrolls game",
+    "Name a green character",
+    "Name a city simulation game",
+    "Name an Xbox console",
+    "Name a Sonic character",
+    "Name a fighting game"
   ],
   "cat5": [
-    "en_cat5_question1_video_games",
-    "en_cat5_question2_video_games",
-    "en_cat5_question3_video_games"
+    "Name a type of vehicle from Mario Kart",
+    "Name a football game",
+    "Name a princess from the Mario universe",
+    "Name a theme park game",
+    "Name a Sonic enemy"
   ]
 }

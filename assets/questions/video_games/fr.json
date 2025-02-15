@@ -1,27 +1,46 @@
 {
   "cat1": [
-    "fr_cat1_question1_video_games",
-    "fr_cat1_question2_video_games",
-    "fr_cat1_question3_video_games"
+    "Cite un personnage de League of Legends",
+    "Cite un Pokemon",
+    "Cite un bloc de Minecraft",
+    "Cite un personnage de Mario",
+    "Cite un jeu Ubisoft",
+    "Cite un jeu mobile",
+    "Cite un jeu Nintendo",
+    "Cite un jeu Rockstar"
   ],
   "cat2": [
-    "fr_cat2_question1_video_games",
-    "fr_cat2_question2_video_games",
-    "fr_cat3_question3_video_games"
+    "Cite un jeu ou une série de jeux adapté·e en film ou série",
+    "Cite un jeu venant d'un ou plusieurs film·s",
+    "Cite un jeu de sport",
+    "Cite un d'horreur",
+    "Cite un éditeur de jeux vidéos",
+    "Cite une console Nintendo"
   ],
   "cat3": [
-    "fr_cat3_question1_video_games",
-    "fr_cat3_question2_video_games",
-    "fr_cat3_question3_video_games"
+    "Cite un monstre de Minecraft",
+    "Cite un minerai de Minecraft",
+    "Cite une couleur utilisée pour un des jeux Pokemon",
+    "Cite un peuple du monde de Zelda",
+    "Cite un jeu de course"
   ],
   "cat4": [
-    "fr_cat4_question1_video_games",
-    "fr_cat4_question2_video_games",
-    "fr_cat4_question3_video_games"
+    "Cite un symbole des quatre boutons principaux de la manette de Playstation",
+    "Cite une forme de bloc de Tetris",
+    "Cite un accessoire de Wii",
+    "Cite un personnage jouable de GTA V",
+    "Cite un Elder Scrolls",
+    "Cite un personnage vert",
+    "Cite un jeu de simulation de ville",
+    "Cite un console Xbox",
+    "Cite un personnage de Sonic",
+    "Cite un jeu de combat"
   ],
   "cat5": [
-    "fr_cat5_question1_video_games",
-    "fr_cat5_question2_video_games",
-    "fr_cat5_question3_video_games"
+    "Cite un type de véhicule de Mario Kart",
+    "Cite un jeu de football",
+    "Cite une princesse du monde de Mario",
+    "Cite un jeu de parc d'attraction",
+    "Cite un ennemi de Sonic"
   ]
 }

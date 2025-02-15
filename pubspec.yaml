@@ -71,6 +71,9 @@ flutter:
     - assets/questions/superheros/
     - assets/questions/video_games/
     - assets/questions/your_city/
+    - assets/questions/football/
+    - assets/questions/french_cinema/
+    - assets/questions/geography_europe/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

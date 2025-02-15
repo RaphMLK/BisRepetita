@@ -8,11 +8,11 @@
       "folder": "video_games"
     },
     {
-      "id": "solar_system",
-      "icon": "flare",
-      "en_label": "Solar System",
-      "fr_label": "Système Solaire",
-      "folder": "solar_system"
+      "id": "french_cinema",
+      "icon": "movie",
+      "en_label": "French Cinema",
+      "fr_label": "Cinéma Français",
+      "folder": "french_cinema"
     },
     {
       "id": "your_city",
@@ -22,11 +22,11 @@
       "folder": "your_city"
     },
     {
-      "id": "french_cuisine",
-      "icon": "skillet",
-      "en_label": "French cuisine",
-      "fr_label": "Cuisine Française",
-      "folder": "french_cuisine"
+      "id": "football",
+      "icon": "sports_soccer",
+      "en_label": "Football (Soccer)",
+      "fr_label": "Football",
+      "folder": "football"
     },
     {
       "id": "superheros",
@@ -34,6 +34,13 @@
       "en_label": "Superheros",
       "fr_label": "Superhéros",
       "folder": "superheros"
+    },
+    {
+      "id": "geography_europe",
+      "icon": "travel_explore",
+      "en_label": "Geography Europe",
+      "fr_label": "Géographie Europe",
+      "folder": "geography_europe"
     }
   ]
 }

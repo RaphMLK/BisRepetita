@@ -1,27 +1,34 @@
 {
   "cat1": [
-    "en_cat1_question1_superheros",
-    "en_cat1_question2_superheros",
-    "en_cat1_question3_superheros"
+    "Name a superhero power",
+    "Name a Marvel superhero",
+    "Name a Marvel superhero with a solo movie"
   ],
   "cat2": [
-    "en_cat2_question1_superheros",
-    "en_cat2_question2_superheros",
-    "en_cat3_question3_superheros"
+    "Name a superhero with science or technology-based powers",
+    "Name a superheroine",
+    "Name one of the Batman movies",
+    "Name a supervillain",
+    "Name a superhero without powers",
+    "Name a superhero who is not from Earth"
   ],
   "cat3": [
-    "en_cat3_question1_superheros",
-    "en_cat3_question2_superheros",
-    "en_cat3_question3_superheros"
+    "Name a superhero from the Justice League",
+    "Name a superhero from the X-Men",
+    "Name a non-American superhero",
+    "Name a superhero portrayed by a single actor",
+    "Name a masked superhero"
   ],
   "cat4": [
-    "en_cat4_question1_superheros",
-    "en_cat4_question2_superheros",
-    "en_cat4_question3_superheros"
+    "Name an actor who played Spider-Man",
+    "Name one of the Fantastic Four",
+    "Name an actor who played Batman",
+    "Name a superhero who can fly",
+    "Name one of the Guardians of the Galaxy"
   ],
   "cat5": [
-    "en_cat5_question1_superheros",
-    "en_cat5_question2_superheros",
-    "en_cat5_question3_superheros"
+    "Name one of the two major superhero brands",
+    "Name a superhero from Norse mythology",
+    "Name one of Superman's powers"
   ]
 }

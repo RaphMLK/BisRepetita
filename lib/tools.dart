@@ -12,8 +12,9 @@ List<T> randomItemsInList<T>(List<T> list, int nb) {
 
 final stringToIcon = <String, IconData>{
   "sports_esports": Icons.sports_esports,
-  "flare": Icons.flare,
+  "movie": Icons.movie,
   "location_city": Icons.location_city,
-  "skillet": Symbols.skillet,
+  "sports_soccer": Icons.sports_soccer,
   "domino_mask": Symbols.domino_mask,
+  "travel_explore": Icons.travel_explore
 };

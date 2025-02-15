@@ -1,27 +1,34 @@
 {
   "cat1": [
-    "fr_cat1_question1_superheros",
-    "fr_cat1_question2_superheros",
-    "fr_cat1_question3_superheros"
+    "Cite un pouvoir de superhéros",
+    "Cite un superhéros de Marvel",
+    "Cite un superhéros qui a un film solo dans Marvel"
   ],
   "cat2": [
-    "fr_cat2_question1_superheros",
-    "fr_cat2_question2_superheros",
-    "fr_cat3_question3_superheros"
+    "Cite un superhéros avec des pouvoirs liés à la science ou la technologie",
+    "Cite une superhéroine",
+    "Cite un des films Batman",
+    "Cite un supervilain",
+    "Cite un superhéros sans pouvoir",
+    "Cite un superhéros ne venant pas de la Terre"
   ],
   "cat3": [
-    "fr_cat3_question1_superheros",
-    "fr_cat3_question2_superheros",
-    "fr_cat3_question3_superheros"
+    "Cite un superhéros de la Justice League",
+    "Cite un superhéros qu'on peut retrouver dans les X-Men",
+    "Cite un superhéros non-américain",
+    "Cite un superhéros interprété par un·e unique acteur·trice",
+    "Cite un superhéros masqué"
   ],
   "cat4": [
-    "fr_cat4_question1_superheros",
-    "fr_cat4_question2_superheros",
-    "fr_cat4_question3_superheros"
+    "Cite un acteur qui a joué Spider-Man",
+    "Cite un des 4 Fantastiques",
+    "Cite un acteur qui a joué Batman",
+    "Cite un superhéros qui peut voler",
+    "Cite un des Gardiens de la Galaxie"
   ],
   "cat5": [
-    "fr_cat5_question1_superheros",
-    "fr_cat5_question2_superheros",
-    "fr_cat5_question3_superheros"
+    "Cite une des deux grandes marques de superhéros",
+    "Cite un des superhéros issue de la mythologie nordique",
+    "Cite un des pouvoirs de Superman"
   ]
 }

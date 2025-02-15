@@ -1,0 +1,43 @@
+{
+  "cat1": [
+    "Cite une capitale d'Europe",
+    "Cite un pays de l'Union Européenne",
+    "Cite une ville d'Allemagne",
+    "Cite une ville d'Italie",
+    "Cite un pays européen qui finit par un E"
+  ],
+  "cat2": [
+    "Cite un pays qui a une frontière avec la France",
+    "Cite un pays traversé par le Danube",
+    "Cite une monarchie d'Europe",
+    "Cite un pays européen n'ayant pas l'Euro",
+    "Cite une région d'Italie",
+    "Cite un pays européen avec du rouge sur son drapeau"
+  ],
+  "cat3": [
+    "Cite une ville de Finlande",
+    "Cite une ville du Portugal",
+    "Cite une ville européenne qui commence par un V",
+    "Cite une ville de Turquie",
+    "Cite un pays européen qui a pour langue officiel le français"
+  ],
+  "cat4": [
+    "Cite un canton Suisse",
+    "Cite un pays européen se situant sur une ou plusieurs îles",
+    "Cite un pays qui a une frontière avec la Belgique",
+    "Cite une région belge",
+    "Cite un pays du Benelux",
+    "Cite un pays de Scandinavie",
+    "Cite une nation du Royaume-Uni",
+    "Cite une île grecque",
+    "Cite une ville de Pologne"
+  ],
+  "cat5": [
+    "Cite un ancien pays d'Europe",
+    "Cite une ville de Suède",
+    "Cite un pays de l'ex-Tchécoslovaquie",
+    "Cite un pays européen en guerre en ce moment",
+    "Cite un pays de la péninsule ibérique",
+    "Cite un pays européen qui commence par L"
+  ]
+}

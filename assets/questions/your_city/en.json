@@ -1,27 +1,37 @@
 {
   "cat1": [
-    "en_cat1_question1_your_city",
-    "en_cat1_question2_your_city",
-    "en_cat1_question3_your_city"
+    "Name another city in your country's region",
+    "Name a neighboring city to your city",
+    "Name a letter from your city's name",
+    "Name a reason to leave your city",
+    "Name a reason to visit your city"
   ],
   "cat2": [
-    "en_cat2_question1_your_city",
-    "en_cat2_question2_your_city",
-    "en_cat3_question3_your_city"
+    "Name a bar in your city",
+    "Name a restaurant in your city",
+    "Name a neighborhood in your city",
+    "Name a museum in your city",
+    "Name a way to get around your city"
   ],
   "cat3": [
-    "en_cat3_question1_your_city",
-    "en_cat3_question2_your_city",
-    "en_cat3_question3_your_city"
+    "Name a restaurant to go with friends in your city",
+    "Name a cheap bar in your city",
+    "Name a park in your city",
+    "Name a friend's apartment in your city",
+    "Name a bar to avoid for a date in your city"
   ],
   "cat4": [
-    "en_cat4_question1_your_city",
-    "en_cat4_question2_your_city",
-    "en_cat4_question3_your_city"
+    "Name a nightclub in your city",
+    "Name a bar for a date in your city",
+    "Name a restaurant for a date in your city",
+    "Name one of your favorite places in your city",
+    "Name a restaurant to avoid for a date in your city"
   ],
   "cat5": [
-    "en_cat5_question1_your_city",
-    "en_cat5_question2_your_city",
-    "en_cat5_question3_your_city"
+    "Name an expensive restaurant in your city",
+    "Name a monument in your city",
+    "Name a bad restaurant in your city",
+    "Name a sports club in your city",
+    "Name a train station in your city"
   ]
 }
