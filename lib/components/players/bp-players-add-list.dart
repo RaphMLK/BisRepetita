@@ -1,5 +1,6 @@
 import 'package:bisrepetita/models/player.dart';
 import 'package:bisrepetita/models/players-list.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,17 +35,15 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
           position: DecorationPosition.foreground,
           decoration: BoxDecoration(
             border: Border(
-              bottom: Divider.createBorderSide(context, color: Colors.white),
+              bottom: Divider.createBorderSide(context,
+                  color: BPColors.dividerColor),
             ),
           ),
           child: ListTile(
             key: Key('chief'),
             tileColor: Colors.transparent,
             title: Text(
-                style: GoogleFonts.poppins(
-                    fontSize: 26,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w300),
+                style: Theme.of(context).textTheme.bodySmall,
                 getAppLocalizations(context)!
                     .add_players_list_component_master),
             contentPadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -56,7 +55,7 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                 style: const ButtonStyle(
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
-                icon: const Icon(color: Colors.white, Icons.face)),
+                icon: Icon(color: BPColors.textColor, Icons.face)),
           ),
         ),
         footer: _addPlayerInput
@@ -65,8 +64,8 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                 position: DecorationPosition.foreground,
                 decoration: BoxDecoration(
                   border: Border(
-                    bottom:
-                        Divider.createBorderSide(context, color: Colors.white),
+                    bottom: Divider.createBorderSide(context,
+                        color: BPColors.dividerColor),
                   ),
                 ),
                 child: ListTile(
@@ -83,9 +82,9 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                           transform: Matrix4.translationValues(0, 3.5, 0),
                           child: Container(
                             height: 24,
-                            decoration: const ShapeDecoration(
+                            decoration: ShapeDecoration(
                               shape: CircleBorder(),
-                              color: Colors.white,
+                              color: BPColors.dividerColor,
                             ),
                             child: IconButton(
                                 onPressed: () {
@@ -93,19 +92,15 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                                 },
                                 iconSize: 24,
                                 padding: EdgeInsets.zero,
-                                icon: const Icon(
-                                    color: Color(0xFF816E94), Icons.check)),
+                                icon: Icon(
+                                    color: BPColors.primaryColor, Icons.check)),
                           ),
                         )),
-                    cursorColor: Colors.white,
+                    cursorColor: BPColors.textColor,
                     autocorrect: false,
                     autofocus: true,
                     maxLength: 15,
-                    style: GoogleFonts.poppins(
-                      fontSize: 24,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w300,
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                     onTapOutside: (event) {
                       _addAndValidatePlayer(context);
                     },
@@ -122,7 +117,7 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                       style: const ButtonStyle(
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
-                      icon: const Icon(color: Colors.white, Icons.add)),
+                      icon: Icon(color: BPColors.textColor, Icons.add)),
                 ),
               )
             : DecoratedBox(
@@ -187,34 +182,30 @@ class _BPPlayersAddListState extends State<BPPlayersAddList> {
                 key: Key('$index'),
                 tileColor: Colors.transparent,
                 title: Text(
-                    style: GoogleFonts.poppins(
-                        fontSize: 26,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300),
-                    '${_players.players[index].name}'),
+                    style: Theme.of(context).textTheme.bodySmall,
+                    _players.players[index].name),
                 contentPadding: EdgeInsets.zero,
                 leading: ReorderableDragStartListener(
                     index: index,
-                    child: const Icon(color: Colors.white, Icons.reorder)),
+                    child: Icon(color: BPColors.textColor, Icons.reorder)),
                 trailing: Container(
                   height: 24,
                   padding: const EdgeInsets.all(0),
-                  decoration: const ShapeDecoration(
+                  decoration: ShapeDecoration(
                     shape: CircleBorder(),
-                    color: Colors.white,
+                    color: BPColors.dividerColor,
                   ),
                   child: IconButton(
                       onPressed: () {
                         setState(() {
-                          var cloneList =
-                              new List<Player>.from(_players.players);
+                          var cloneList = List<Player>.from(_players.players);
                           cloneList.removeAt(index);
                           _players.players = cloneList;
                         });
                       },
                       iconSize: 24,
                       padding: EdgeInsets.zero,
-                      icon: const Icon(color: Color(0xFF7B2D26), Icons.close)),
+                      icon: Icon(color: BPColors.dangerColor, Icons.close)),
                 ),
               ),
             ),

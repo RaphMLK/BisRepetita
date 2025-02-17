@@ -4,6 +4,7 @@ import 'package:bisrepetita/models/locale.dart';
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/HomePage.dart';
+import 'package:bisrepetita/theme/bp_theme_data.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -53,11 +54,7 @@ class MyApp extends StatelessWidget {
                   localizationsDelegates:
                       AppLocalizations.localizationsDelegates,
                   supportedLocales: AppLocalizations.supportedLocales,
-                  theme: ThemeData(
-                    colorScheme:
-                        ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                    useMaterial3: true,
-                  ),
+                  theme: BPAppTheme.defaultTheme,
                   home: HomePage(),
                 )));
   }

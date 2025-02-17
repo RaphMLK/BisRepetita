@@ -1,9 +1,9 @@
 import 'package:bisrepetita/models/player.dart';
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/pages/result.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class BPPlayersEliminateList extends StatefulWidget {
@@ -36,10 +36,7 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                       tileColor: Colors.transparent,
                       contentPadding: EdgeInsets.zero,
                       title: Text(
-                          style: GoogleFonts.poppins(
-                              fontSize: 26,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300),
+                          style: Theme.of(context).textTheme.bodySmall,
                           player.name),
                       trailing: Container(
                         height: 24,
@@ -55,8 +52,7 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                                   dialogWidgetToEliminate(players, player)),
                           iconSize: 24,
                           padding: EdgeInsets.zero,
-                          icon:
-                              const Icon(color: Color(0xFF7B2D26), Icons.close),
+                          icon: Icon(color: BPColors.dangerColor, Icons.close),
                         ),
                       ))))
       ]);
@@ -73,12 +69,15 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                      style: GoogleFonts.poppins(
-                          fontSize: 24, fontWeight: FontWeight.w300),
-                      getAppLocalizations(context)!
-                          .eliminate_players_list_component_prompt_title(
-                              player.name)),
+                  Expanded(
+                      child: Text(
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(color: BPColors.textOnWhiteColor),
+                          getAppLocalizations(context)!
+                              .eliminate_players_list_component_prompt_title(
+                                  player.name))),
                 ],
               ),
               SizedBox(height: 10),
@@ -91,9 +90,9 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                       },
                       style: ButtonStyle(
                           backgroundColor:
-                              WidgetStatePropertyAll(Color(0xFF7B2D26))),
+                              WidgetStatePropertyAll(BPColors.dangerColor)),
                       child: Text(
-                          style: GoogleFonts.poppins(color: Colors.white),
+                          style: Theme.of(context).textTheme.labelSmall,
                           getAppLocalizations(context)!
                               .eliminate_players_list_component_cancel)),
                   SizedBox(width: 8),
@@ -110,9 +109,9 @@ class _BPPlayersEliminateListState extends State<BPPlayersEliminateList> {
                       },
                       style: ButtonStyle(
                           backgroundColor:
-                              WidgetStatePropertyAll(Color(0xFF816E94))),
+                              WidgetStatePropertyAll(BPColors.primaryColor)),
                       child: Text(
-                          style: GoogleFonts.poppins(color: Colors.white),
+                          style: Theme.of(context).textTheme.labelSmall,
                           getAppLocalizations(context)!
                               .eliminate_players_list_component_confirm))
                 ],

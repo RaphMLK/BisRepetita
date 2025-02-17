@@ -5,6 +5,7 @@ import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/question.dart';
 import 'package:bisrepetita/pages/result.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -53,12 +54,9 @@ class EliminationPage extends StatelessWidget {
                                       winner: alivePlayers.firstOrNull)));
                         }
                       },
-                      style: FilledButton.styleFrom(
-                        minimumSize: Size.fromHeight(40),
-                        backgroundColor: Color(0xFF816E94),
-                      ),
+                      style: Theme.of(context).filledButtonTheme.style,
                       child: Text(
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: BPColors.textColor),
                           getAppLocalizations(context)!
                               .elimination_page_continue));
                 })),

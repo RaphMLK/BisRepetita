@@ -1,6 +1,6 @@
 import 'package:bisrepetita/pages/HomePage.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BPAppBar extends StatelessWidget {
   final bool backButton;
@@ -17,8 +17,7 @@ class BPAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
-      titleTextStyle:
-          GoogleFonts.poppins(fontSize: 40, fontWeight: FontWeight.w200),
+      titleTextStyle: Theme.of(context).textTheme.titleMedium,
       centerTitle: true,
       title: Text(title),
       automaticallyImplyLeading: false,
@@ -39,7 +38,7 @@ class BPAppBar extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const HomePage()));
               },
               icon: const Icon(Icons.close),
-              color: Colors.white)
+              color: BPColors.textColor)
       ],
     );
   }

@@ -2,6 +2,7 @@ import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/models/question.dart';
 import 'package:bisrepetita/pages/elimination.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -62,11 +63,7 @@ class _QuestionPageState extends State<QuestionPage> {
                         question.getNewQuestion(context);
                         return Text(
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(
-                              fontSize: 30,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w200,
-                            ),
+                            style: Theme.of(context).textTheme.bodyMedium,
                             question.currentQuestion);
                       }),
                     )),
@@ -95,16 +92,12 @@ class _QuestionPageState extends State<QuestionPage> {
                                     });
                                   }
                                 : null,
-                            style: FilledButton.styleFrom(
-                              minimumSize: Size.fromHeight(40),
-                              backgroundColor: Color(0xFF816E94),
-                              disabledBackgroundColor: Color(0xFF816E94),
-                            ),
+                            style: Theme.of(context).filledButtonTheme.style,
                             child: Text(
                                 style: TextStyle(
                                     color: _answerController.text != ""
-                                        ? Colors.white
-                                        : Color(0xFF7B2D26).withOpacity(0.6)),
+                                        ? BPColors.textColor
+                                        : BPColors.buttonDangerLabel),
                                 _getButtonLabel()))))
               ],
             )));
@@ -146,9 +139,9 @@ class _QuestionPageState extends State<QuestionPage> {
         controller: _answerController,
         decoration: InputDecoration(
             enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.white, width: 1)),
+                borderSide: BorderSide(color: BPColors.dividerColor, width: 1)),
             focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.white, width: 1)),
+                borderSide: BorderSide(color: BPColors.dividerColor, width: 1)),
             contentPadding: EdgeInsets.zero,
             counterText: '', // to hide the counter of length
             suffix: _focusNodeTextField.hasFocus
@@ -156,9 +149,9 @@ class _QuestionPageState extends State<QuestionPage> {
                     transform: Matrix4.translationValues(0, 3.5, 0),
                     child: Container(
                       height: 24,
-                      decoration: const ShapeDecoration(
+                      decoration: ShapeDecoration(
                         shape: CircleBorder(),
-                        color: Colors.white,
+                        color: BPColors.textColor,
                       ),
                       child: IconButton(
                           onPressed: () {
@@ -168,8 +161,7 @@ class _QuestionPageState extends State<QuestionPage> {
                           },
                           iconSize: 24,
                           padding: EdgeInsets.zero,
-                          icon: const Icon(
-                              color: Color(0xFF7B2D26), Icons.close)),
+                          icon: Icon(color: BPColors.dangerColor, Icons.close)),
                     ),
                   )
                 : null),
@@ -192,10 +184,16 @@ class _QuestionPageState extends State<QuestionPage> {
     return Card(
         child: ListTile(
       title: Text(
-          style: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w300),
+          style: Theme.of(context)
+              .textTheme
+              .labelLarge!
+              .copyWith(color: BPColors.textOnWhiteColor),
           getAppLocalizations(context)!.question_page_answer_title),
       subtitle: Text(
-          style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300),
+          style: Theme.of(context)
+              .textTheme
+              .labelMedium!
+              .copyWith(color: BPColors.textOnWhiteColor),
           _masterAnswer),
     ));
   }

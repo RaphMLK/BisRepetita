@@ -3,9 +3,9 @@ import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/models/category.dart';
 import 'package:bisrepetita/models/locale.dart';
 import 'package:bisrepetita/pages/question.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class CategoriesPage extends StatefulWidget {
@@ -59,18 +59,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                   }
                                 }
                               : null,
-                          style: FilledButton.styleFrom(
-                            minimumSize: Size.fromHeight(40),
-                            backgroundColor: Color(0xFF816E94),
-                            disabledBackgroundColor: Color(0xFF816E94),
-                          ),
+                          style: Theme.of(context).filledButtonTheme.style,
                           child: Text(
                               style: TextStyle(
                                   color: confirmedCategory ||
                                           selectedCategory != null ||
                                           randomCategory
-                                      ? Colors.white
-                                      : Color(0xFF7B2D26).withOpacity(0.6)),
+                                      ? BPColors.textColor
+                                      : BPColors.buttonDangerLabel),
                               confirmedCategory ||
                                       selectedCategory != null ||
                                       randomCategory
@@ -101,25 +97,22 @@ class _CategoriesPageState extends State<CategoriesPage> {
               position: DecorationPosition.foreground,
               decoration: BoxDecoration(
                 border: Border(
-                  bottom:
-                      Divider.createBorderSide(context, color: Colors.white),
+                  bottom: Divider.createBorderSide(context,
+                      color: BPColors.dividerColor),
                 ),
               ),
               child: ListTile(
                 key: Key(category.id),
                 tileColor: Colors.transparent,
                 title: Text(
-                    style: GoogleFonts.poppins(
-                        fontSize: 26,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300),
+                    style: Theme.of(context).textTheme.bodySmall,
                     switch (bpLocale.getLocaleShortName()) {
                       'fr' => category.fr_label,
                       String() => category.en_label, // Default value
                     }),
                 contentPadding: EdgeInsets.zero,
                 leading: Icon(
-                  color: Colors.white,
+                  color: BPColors.textColor,
                   stringToIcon[category.icon],
                 ),
                 trailing: selectedCategory == category
@@ -142,27 +135,25 @@ class _CategoriesPageState extends State<CategoriesPage> {
             position: DecorationPosition.foreground,
             decoration: BoxDecoration(
               border: Border(
-                bottom: Divider.createBorderSide(context, color: Colors.white),
+                bottom: Divider.createBorderSide(context,
+                    color: BPColors.dividerColor),
               ),
             ),
             child: ListTile(
               key: Key('random'),
               tileColor: Colors.transparent,
               title: Text(
-                  style: GoogleFonts.poppins(
-                      fontSize: 26,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w300),
+                  style: Theme.of(context).textTheme.bodySmall,
                   getAppLocalizations(context)!
                       .categories_page_random_category),
               contentPadding: EdgeInsets.zero,
               leading: Icon(
-                color: Colors.white,
+                color: BPColors.textColor,
                 Icons.question_mark,
               ),
               trailing: randomCategory
                   ? Icon(
-                      color: Colors.white,
+                      color: BPColors.textColor,
                       Icons.check,
                     )
                   : null,
@@ -177,8 +168,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
       return Center(
         child: Text(
             textAlign: TextAlign.center,
-            style: GoogleFonts.poppins(
-                fontSize: 38, fontWeight: FontWeight.w200, color: Colors.white),
+            style: Theme.of(context).textTheme.bodyLarge,
             getAppLocalizations(context)!.categories_page_confirmed(
                 switch (bpLocale.getLocaleShortName()) {
               'fr' => category.currentCategory.fr_label,

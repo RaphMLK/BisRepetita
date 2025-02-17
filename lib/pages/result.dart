@@ -2,9 +2,9 @@ import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
 import 'package:bisrepetita/models/player.dart';
 import 'package:bisrepetita/pages/HomePage.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ResultPage extends StatelessWidget {
   final Player? winner;
@@ -30,10 +30,7 @@ class ResultPage extends StatelessWidget {
                   child: Center(
                     child: Text(
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.poppins(
-                            fontSize: 38,
-                            fontWeight: FontWeight.w200,
-                            color: Colors.white),
+                        style: Theme.of(context).textTheme.bodyLarge,
                         winner == null
                             ? noMoreQuestion == true
                                 ? getAppLocalizations(context)!
@@ -52,12 +49,9 @@ class ResultPage extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => const HomePage()));
                           },
-                          style: FilledButton.styleFrom(
-                            minimumSize: Size.fromHeight(40),
-                            backgroundColor: Color(0xFF816E94),
-                          ),
+                          style: Theme.of(context).filledButtonTheme.style,
                           child: Text(
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: BPColors.textColor),
                               getAppLocalizations(context)!.result_page_end))))
             ],
           ),

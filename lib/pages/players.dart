@@ -4,6 +4,7 @@ import 'package:bisrepetita/components/players/bp-players-add-list.dart';
 import 'package:bisrepetita/models/category.dart';
 import 'package:bisrepetita/models/players-list.dart';
 import 'package:bisrepetita/pages/categories.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -47,16 +48,12 @@ class _PlayersPageState extends State<PlayersPage> {
                                       builder: (context) => CategoriesPage()));
                             }
                           : null,
-                      style: FilledButton.styleFrom(
-                        minimumSize: Size.fromHeight(40),
-                        backgroundColor: Color(0xFF816E94),
-                        disabledBackgroundColor: Color(0xFF816E94),
-                      ),
+                      style: Theme.of(context).filledButtonTheme.style,
                       child: Text(
                           style: TextStyle(
                               color: players.players.length >= 2
-                                  ? Colors.white
-                                  : Color(0xFF7B2D26).withOpacity(0.6)),
+                                  ? BPColors.textColor
+                                  : BPColors.buttonDangerLabel),
                           players.players.length >= 2
                               ? getAppLocalizations(context)!
                                   .players_page_launch

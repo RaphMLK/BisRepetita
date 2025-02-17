@@ -1,3 +1,4 @@
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:flutter/material.dart';
 
 class BPPage extends StatelessWidget {
@@ -9,11 +10,11 @@ class BPPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Color(0xFF19535F), Color(0xFF0B7A75)])),
+              colors: [BPColors.backgroundColor1, BPColors.backgroundColor2])),
       child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: (appBar != null

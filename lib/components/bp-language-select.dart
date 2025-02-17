@@ -1,4 +1,5 @@
 import 'package:bisrepetita/models/locale.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +35,7 @@ class BPLanguageSelect extends StatelessWidget {
                                     .locale = Locale(locale.fromIntl);
                                 Navigator.pop(context);
                               },
-                              activeColor: Color(0xFF816E94)),
+                              activeColor: BPColors.primaryColor),
                         )
                     ],
                   )));

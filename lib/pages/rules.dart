@@ -1,8 +1,8 @@
 import 'package:bisrepetita/components/bp-app-bar.dart';
 import 'package:bisrepetita/components/bp-page.dart';
+import 'package:bisrepetita/theme/bp_colors.dart';
 import 'package:bisrepetita/tools.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RulePage extends StatelessWidget {
   const RulePage({super.key});
@@ -23,15 +23,13 @@ class RulePage extends StatelessWidget {
                 spacing: 10,
                 children: [
                   Expanded(
-                      child: Icon(color: Colors.white, size: 80, Icons.face)),
+                      child: Icon(
+                          color: BPColors.textColor, size: 80, Icons.face)),
                   Expanded(
                       flex: 3,
                       child: Text(
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white),
+                          style: Theme.of(context).textTheme.labelSmall,
                           getAppLocalizations(context)!.rules_page_1))
                 ],
               ),
@@ -42,13 +40,11 @@ class RulePage extends StatelessWidget {
                       flex: 3,
                       child: Text(
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white),
+                          style: Theme.of(context).textTheme.labelSmall,
                           getAppLocalizations(context)!.rules_page_2)),
                   Expanded(
-                      child: Icon(color: Colors.white, size: 80, Icons.groups)),
+                      child: Icon(
+                          color: BPColors.textColor, size: 80, Icons.groups)),
                 ],
               ),
               Row(
@@ -56,17 +52,14 @@ class RulePage extends StatelessWidget {
                 children: [
                   Expanded(
                       child: Icon(
-                          color: Colors.white,
+                          color: BPColors.textColor,
                           size: 80,
                           Icons.reduce_capacity)),
                   Expanded(
                       flex: 3,
                       child: Text(
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white),
+                          style: Theme.of(context).textTheme.labelSmall,
                           getAppLocalizations(context)!.rules_page_3))
                 ],
               ),
@@ -77,14 +70,11 @@ class RulePage extends StatelessWidget {
                       flex: 3,
                       child: Text(
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white),
+                          style: Theme.of(context).textTheme.labelSmall,
                           getAppLocalizations(context)!.rules_page_4)),
                   Expanded(
                       child: Icon(
-                          color: Colors.white,
+                          color: BPColors.textColor,
                           size: 80,
                           Icons.sentiment_very_satisfied)),
                 ],

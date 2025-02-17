@@ -52,9 +52,7 @@ class HomePage extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => const PlayersPage()));
                       },
-                      style: FilledButton.styleFrom(
-                          minimumSize: Size.fromHeight(40),
-                          backgroundColor: Color(0xFF816E94)),
+                      style: Theme.of(context).filledButtonTheme.style,
                       child: Text(
                           getAppLocalizations(context)!.home_page_button_play),
                     ),
@@ -72,8 +70,8 @@ class HomePage extends StatelessWidget {
                                             builder: (context) =>
                                                 const RulePage()));
                                   },
-                                  style: FilledButton.styleFrom(
-                                      backgroundColor: Color(0xFF816E94)),
+                                  style:
+                                      Theme.of(context).filledButtonTheme.style,
                                   child: Text(getAppLocalizations(context)!
                                       .home_page_button_rules),
                                 ))),
